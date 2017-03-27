@@ -11,7 +11,7 @@ import Cocoa
 class Scheduler: NSObject {
 
     var classCount=[Int:Int]()
-    var schedule=[Int:NSArray]()
+    var schedule=[String:NSArray]()
     
     override init(){
     

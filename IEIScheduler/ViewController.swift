@@ -10,6 +10,8 @@ import Cocoa
 
 class ViewController: NSViewController {
 
+    var scheduler=Scheduler()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
