@@ -11,11 +11,15 @@ import Cocoa
 class Teacher: NSObject {
     
     var name:String
-    var availableTimes=[String:Bool]()
+    var id:String
+    var timePrefs = NSDictionary()
+    var classPreferences = NSDictionary()
+    var comments = ""
     var currentHappiness:Double
     
-    init(name:String){
+    init(name:String,id:String){
         currentHappiness=0;
         self.name=name
+        self.id=id
     }
 }

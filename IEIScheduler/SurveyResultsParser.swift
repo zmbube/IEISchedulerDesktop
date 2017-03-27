@@ -16,10 +16,56 @@ class SurveyResultsParser: NSObject {
     let commentsUrl="https://www.zmbube.com/API/selectComment.php"
     let adminInfoUrl="https://www.zmbube.com/API/selectAdminInfo.php"
     let adminOverrideUrl="https://www.zmbube.com/API/selectAdminOverride.php"
-    var dataLoadedCount=0
-    var results:[NSDictionary]=[]
     
-    func parseUrl(urlInput:String){
+    func getTeachers()->[Teacher]{
+        var teachers=[Teacher]()
+        let teachersInfo=parseUrl(urlInput: teacherInfoUrl)
+        for teacher in teachersInfo {
+            let temp = Teacher(name: (teacher["F_Name"] as! String) + (teacher["L_Name"] as! String) ,id:teacher["U_ID"] as! String)
+            teachers.append(temp)
+        }
+        let classPrefs=parseUrl(urlInput: classPrefUrl)
+        let timePrefs=parseUrl(urlInput: timePrefUrl)
+        let comments=parseUrl(urlInput: commentsUrl)
+        
+        for prefs in classPrefs {
+            for teacher in teachers {
+                if(teacher.id==(prefs["U_ID"] as! String)){
+                    teacher.classPreferences = prefs
+                }
+            }
+        }
+        
+        for prefs in timePrefs {
+            for teacher in teachers {
+                if(teacher.id==(prefs["U_ID"] as! String)){
+                    teacher.timePrefs=prefs
+                }
+            }
+        }
+        
+        for prefs in comments {
+            for teacher in teachers {
+                if(teacher.id==(prefs["U_ID"] as! String)){
+                    teacher.comments=prefs["Comment"] as! String
+                }
+            }
+        }
+        
+        return teachers
+    }
+    
+    func getOverrides(){
+        
+    }
+    
+    func getAdmins(){
+        
+    }
+    
+    func parseUrl(urlInput:String)->[NSDictionary]{
+        var dataLoaded=false
+        var results:[NSDictionary]=[]
         let urlAsString=urlInput
         let url=URL(string: urlAsString)
         let urlSession=URLSession.shared
@@ -28,18 +74,18 @@ class SurveyResultsParser: NSObject {
                 if let jsonResult = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSArray{
                     
                     for item in jsonResult{
-                        self.results.append(item as! NSDictionary)
+                        results.append(item as! NSDictionary)
                     }
                 }
-                self.dataLoadedCount += 1
+                dataLoaded=true
             }
             catch{}
         })
         task.resume()
-        while(dataLoadedCount != 6){
+        while(!dataLoaded){
             sleep(2)
         }
-
+        return results
     }
 
 }

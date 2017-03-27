@@ -10,8 +10,8 @@ import Cocoa
 
 class Scheduler: NSObject {
 
-    var classCount=[Int:Int]()
-    var schedule=[String:NSArray]()
+    var classCount=[Int:Int]()//level:sections
+    var schedule=[Int:NSArray]()//level:[Class]
     
     override init(){
     

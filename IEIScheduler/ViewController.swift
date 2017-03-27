@@ -11,11 +11,13 @@ import Cocoa
 class ViewController: NSViewController {
 
     var scheduler=Scheduler()
+    let parser=SurveyResultsParser()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let teachers = parser.getTeachers()
     }
 
     override var representedObject: Any? {
