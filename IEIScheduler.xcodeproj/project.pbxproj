@@ -13,7 +13,7 @@
 		B66E1FBE1E4CDEEF0049416C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B66E1FBC1E4CDEEF0049416C /* Main.storyboard */; };
 		B66E1FC91E4CDEEF0049416C /* IEISchedulerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66E1FC81E4CDEEF0049416C /* IEISchedulerTests.swift */; };
 		B66E1FD41E4CDEEF0049416C /* IEISchedulerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66E1FD31E4CDEEF0049416C /* IEISchedulerUITests.swift */; };
-		B66E1FE21E4CDF970049416C /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66E1FE11E4CDF970049416C /* Scheduler.swift */; };
+		B66E1FE21E4CDF970049416C /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66E1FE11E4CDF970049416C /* Schedule.swift */; };
 		B66E1FE41E4CDFA70049416C /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66E1FE31E4CDFA70049416C /* Teacher.swift */; };
 		B66E1FE61E4CDFB00049416C /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66E1FE51E4CDFB00049416C /* Room.swift */; };
 		B66E1FE81E4CFFE20049416C /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66E1FE71E4CFFE20049416C /* Class.swift */; };
@@ -50,7 +50,7 @@
 		B66E1FCF1E4CDEEF0049416C /* IEISchedulerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IEISchedulerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B66E1FD31E4CDEEF0049416C /* IEISchedulerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IEISchedulerUITests.swift; sourceTree = "<group>"; };
 		B66E1FD51E4CDEEF0049416C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B66E1FE11E4CDF970049416C /* Scheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
+		B66E1FE11E4CDF970049416C /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		B66E1FE31E4CDFA70049416C /* Teacher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Teacher.swift; sourceTree = "<group>"; };
 		B66E1FE51E4CDFB00049416C /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		B66E1FE71E4CFFE20049416C /* Class.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Class.swift; sourceTree = "<group>"; };
@@ -111,7 +111,7 @@
 				B66E1FBA1E4CDEEF0049416C /* Assets.xcassets */,
 				B66E1FBC1E4CDEEF0049416C /* Main.storyboard */,
 				B66E1FBF1E4CDEEF0049416C /* Info.plist */,
-				B66E1FE11E4CDF970049416C /* Scheduler.swift */,
+				B66E1FE11E4CDF970049416C /* Schedule.swift */,
 				B66E1FE31E4CDFA70049416C /* Teacher.swift */,
 				B66E1FE51E4CDFB00049416C /* Room.swift */,
 				B6F4A3661E8193CF00DB9950 /* SurveyResultsParser.swift */,
@@ -272,7 +272,7 @@
 			files = (
 				B66E1FE81E4CFFE20049416C /* Class.swift in Sources */,
 				B66E1FE41E4CDFA70049416C /* Teacher.swift in Sources */,
-				B66E1FE21E4CDF970049416C /* Scheduler.swift in Sources */,
+				B66E1FE21E4CDF970049416C /* Schedule.swift in Sources */,
 				B6F4A3671E8193CF00DB9950 /* SurveyResultsParser.swift in Sources */,
 				B66E1FB91E4CDEEF0049416C /* ViewController.swift in Sources */,
 				B66E1FB71E4CDEEF0049416C /* AppDelegate.swift in Sources */,

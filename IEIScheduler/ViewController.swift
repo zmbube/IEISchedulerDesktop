@@ -10,7 +10,7 @@ import Cocoa
 
 class ViewController: NSViewController {
 
-    var scheduler=Scheduler()
+    var scheduler=Schedule()
     let parser=SurveyResultsParser()
     
     override func viewDidLoad() {

@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class Scheduler: NSObject {
+class Schedule: NSObject {
 
     var classCount=[Int:Int]()//level:sections
     var schedule=[Int:NSArray]()//level:[Class]
