@@ -671,65 +671,81 @@
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                     </window>
                     <connections>
-                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
+                        <segue destination="qeu-PA-93A" kind="relationship" relationship="window.shadowedContentViewController" id="std-r1-9MS"/>
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="133" y="327"/>
         </scene>
+        <!--Tab View Controller-->
+        <scene sceneID="b4o-ZC-8AN">
+            <objects>
+                <tabViewController selectedTabViewItemIndex="0" tabStyle="unspecified" id="zja-2L-tzv" sceneMemberID="viewController">
+                    <tabViewItems>
+                        <tabViewItem id="4DJ-tA-ATY"/>
+                        <tabViewItem id="6IU-eo-fOd"/>
+                        <tabViewItem id="ymK-Gg-fEp"/>
+                    </tabViewItems>
+                    <tabView key="tabView" id="CH9-Qc-oQ8">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <font key="font" metaFont="message"/>
+                        <tabViewItems/>
+                    </tabView>
+                    <connections>
+                        <segue destination="YQX-fI-txq" kind="relationship" relationship="tabItems" id="xDY-BX-hhg"/>
+                        <segue destination="Fxc-1C-q3J" kind="relationship" relationship="tabItems" id="sTj-ro-YAc"/>
+                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="tabItems" id="NgO-J6-r8D"/>
+                    </connections>
+                </tabViewController>
+                <customObject id="Lsd-xj-9qT" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1456" y="-170"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="ELO-Z2-zhf">
             <objects>
                 <viewController id="qeu-PA-93A" sceneMemberID="viewController">
                     <view key="view" id="McR-i8-bmK">
-                        <rect key="frame" x="0.0" y="0.0" width="292" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="836" height="636"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hin-bf-BXy">
-                                <rect key="frame" x="72" y="211" width="149" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Add/Remove Room" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1Pr-MV-l6s">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" size="13" name="Helvetica"/>
-                                </buttonCell>
-                            </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZGY-kR-UV4">
-                                <rect key="frame" x="53" y="166" width="186" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Edit Teacher Preferences" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zvu-mw-7CU">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" size="13" name="Helvetica"/>
-                                </buttonCell>
-                            </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SbB-Ru-fBp">
-                                <rect key="frame" x="60" y="120" width="172" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Create Schedule" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="vWK-uU-FBi">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" size="13" name="Helvetica"/>
-                                </buttonCell>
-                            </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rlK-xk-Vk5">
-                                <rect key="frame" x="24" y="254" width="245" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Admin Controls" id="7w1-Hc-1T7">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rlK-xk-Vk5">
+                                <rect key="frame" x="-2" y="597" width="840" height="39"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Admin Controls" id="7w1-Hc-1T7">
                                     <font key="font" size="32" name="Helvetica-Light"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <containerView autoresizesSubviews="NO" translatesAutoresizingMaskIntoConstraints="NO" id="453-1H-d4x">
+                                <rect key="frame" x="0.0" y="0.0" width="836" height="597"/>
+                                <connections>
+                                    <segue destination="zja-2L-tzv" kind="embed" id="UGt-C4-MuS"/>
+                                </connections>
+                            </containerView>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="453-1H-d4x" firstAttribute="top" secondItem="rlK-xk-Vk5" secondAttribute="bottom" id="8Uu-eS-Hr3"/>
+                            <constraint firstItem="453-1H-d4x" firstAttribute="top" secondItem="rlK-xk-Vk5" secondAttribute="bottom" id="J4a-TK-N45"/>
+                            <constraint firstAttribute="trailing" secondItem="rlK-xk-Vk5" secondAttribute="trailing" id="ReL-CO-inE"/>
+                            <constraint firstAttribute="bottom" secondItem="453-1H-d4x" secondAttribute="bottom" id="Ylu-UF-dio"/>
+                            <constraint firstAttribute="trailing" secondItem="453-1H-d4x" secondAttribute="trailing" id="ZD9-V8-r8N"/>
+                            <constraint firstItem="rlK-xk-Vk5" firstAttribute="top" secondItem="McR-i8-bmK" secondAttribute="top" id="cNb-4L-fcd"/>
+                            <constraint firstItem="453-1H-d4x" firstAttribute="leading" secondItem="McR-i8-bmK" secondAttribute="leading" id="vsR-yT-xMb"/>
+                            <constraint firstItem="rlK-xk-Vk5" firstAttribute="leading" secondItem="McR-i8-bmK" secondAttribute="leading" id="zd1-OC-gIB"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <customObject id="gIp-4h-L4Y" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="870" y="111"/>
+            <point key="canvasLocation" x="941" y="435"/>
         </scene>
-        <!--View Controller-->
+        <!--Rooms-->
         <scene sceneID="yjI-b3-CbI">
             <objects>
-                <viewController id="YQX-fI-txq" sceneMemberID="viewController">
+                <viewController title="Rooms" id="YQX-fI-txq" sceneMemberID="viewController">
                     <view key="view" id="pZW-ma-qXz">
                         <rect key="frame" x="0.0" y="0.0" width="627" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -950,7 +966,7 @@
                                 </buttonCell>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LGv-fc-chc">
-                                <rect key="frame" x="256" y="80" width="61" height="18"/>
+                                <rect key="frame" x="271" y="80" width="42" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="check" title="M" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="ckN-kh-xtR">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -958,7 +974,7 @@
                                 </buttonCell>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Yd-NV-0MV">
-                                <rect key="frame" x="302" y="80" width="61" height="18"/>
+                                <rect key="frame" x="317" y="80" width="37" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="check" title="T" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="rNp-KE-U1g">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -966,7 +982,7 @@
                                 </buttonCell>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="99C-MX-d9m">
-                                <rect key="frame" x="343" y="80" width="61" height="18"/>
+                                <rect key="frame" x="358" y="80" width="41" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="check" title="W" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Sy5-sn-jTK">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -974,7 +990,7 @@
                                 </buttonCell>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jc7-uj-rhS">
-                                <rect key="frame" x="388" y="80" width="61" height="18"/>
+                                <rect key="frame" x="403" y="80" width="39" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="check" title="R" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="pQL-sP-3Ol">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -982,7 +998,7 @@
                                 </buttonCell>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tz4-dR-75D">
-                                <rect key="frame" x="431" y="80" width="61" height="18"/>
+                                <rect key="frame" x="439" y="80" width="38" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="check" title="F" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="tPP-Xy-ri2">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -994,12 +1010,12 @@
                 </viewController>
                 <customObject id="zqb-UO-hw3" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1596.5" y="125"/>
+            <point key="canvasLocation" x="2051" y="-342"/>
         </scene>
-        <!--View Controller-->
+        <!--Teacher Preferences-->
         <scene sceneID="fUF-PR-Wwi">
             <objects>
-                <viewController id="Fxc-1C-q3J" sceneMemberID="viewController">
+                <viewController title="Teacher Preferences" id="Fxc-1C-q3J" sceneMemberID="viewController">
                     <view key="view" id="iSP-Gu-lmZ">
                         <rect key="frame" x="0.0" y="0.0" width="821" height="370"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1341,12 +1357,12 @@
                 </viewController>
                 <customObject id="sKW-j1-4jK" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1230.5" y="562"/>
+            <point key="canvasLocation" x="2148" y="91"/>
         </scene>
-        <!--View Controller-->
+        <!--Build Schedule-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="IEIScheduler" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Build Schedule" id="XfG-lQ-9wD" customClass="ViewController" customModule="IEIScheduler" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="778" height="636"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1366,24 +1382,24 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="236" y="992"/>
+            <point key="canvasLocation" x="1882" y="901"/>
         </scene>
         <!--Class Options Table-->
         <scene sceneID="FrA-T9-jxe">
             <objects>
                 <viewController id="d7b-uK-jX0" customClass="ClassOptionsTable" customModule="IEIScheduler" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="Jaf-bD-DgH">
-                        <rect key="frame" x="0.0" y="0.0" width="225" height="636"/>
+                        <rect key="frame" x="0.0" y="0.0" width="225" height="875"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="36" horizontalPageScroll="10" verticalLineScroll="36" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DS2-pF-lQS">
-                                <rect key="frame" x="0.0" y="0.0" width="225" height="636"/>
+                                <rect key="frame" x="0.0" y="0.0" width="225" height="875"/>
                                 <clipView key="contentView" id="2Ly-A6-hO4">
-                                    <rect key="frame" x="1" y="0.0" width="223" height="635"/>
+                                    <rect key="frame" x="1" y="0.0" width="223" height="874"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="35" headerView="3gM-JJ-jNw" viewBased="YES" id="HIT-S0-ZF4">
-                                            <rect key="frame" x="0.0" y="0.0" width="223" height="612"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="223" height="851"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="1"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1471,7 +1487,7 @@
                 </viewController>
                 <customObject id="J37-nZ-Tir" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="341.5" y="1826"/>
+            <point key="canvasLocation" x="1505" y="1936"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="FpM-Rs-CGu">
@@ -1706,9 +1722,9 @@
                                 </buttonCell>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K4O-5i-cgw">
-                                <rect key="frame" x="184" y="413" width="358" height="17"/>
+                                <rect key="frame" x="184" y="413" width="369" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="PLease Enter the number of sections that you need per Lvl" id="1qq-K9-sZw">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Please Enter the number of sections that you need per Level" id="1qq-K9-sZw">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -1835,7 +1851,7 @@
                 </viewController>
                 <customObject id="UPh-Ov-z3h" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="472" y="2596"/>
+            <point key="canvasLocation" x="-631" y="874"/>
         </scene>
     </scenes>
 </document>
