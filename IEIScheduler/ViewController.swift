@@ -12,12 +12,14 @@ class ViewController: NSViewController {
 
     var scheduler=Schedule()
     let parser=SurveyResultsParser()
-    
+    var teachers:[Teacher]=[]
+    @IBOutlet weak var optionsTableContainer: NSView!
+    var optionsTableView:ClassOptionsTable?
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let teachers = parser.getTeachers()
+        teachers = parser.getTeachers()
     }
 
     override var representedObject: Any? {
@@ -26,6 +28,12 @@ class ViewController: NSViewController {
         }
     }
 
+    override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toOptionsTableSegue" {
+            optionsTableView = segue.destinationController as? ClassOptionsTable
+            optionsTableView!.teachers = self.teachers
+        }
+    }
 
 }
 

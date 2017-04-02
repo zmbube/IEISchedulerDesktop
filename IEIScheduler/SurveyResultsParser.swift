@@ -21,7 +21,7 @@ class SurveyResultsParser: NSObject {
         var teachers=[Teacher]()
         let teachersInfo=parseUrl(urlInput: teacherInfoUrl)
         for teacher in teachersInfo {
-            let temp = Teacher(name: (teacher["F_Name"] as! String) + (teacher["L_Name"] as! String) ,id:teacher["U_ID"] as! String)
+            let temp = Teacher(name: "\(teacher["F_Name"] as! String) \(teacher["L_Name"] as! String)" ,id:teacher["U_ID"] as! String)
             teachers.append(temp)
         }
         let classPrefs=parseUrl(urlInput: classPrefUrl)
