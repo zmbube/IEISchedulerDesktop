@@ -703,10 +703,10 @@
             </objects>
             <point key="canvasLocation" x="1456" y="-170"/>
         </scene>
-        <!--View Controller-->
+        <!--Admin Controller-->
         <scene sceneID="ELO-Z2-zhf">
             <objects>
-                <viewController id="qeu-PA-93A" sceneMemberID="viewController">
+                <viewController id="qeu-PA-93A" customClass="AdminController" customModule="IEIScheduler" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="McR-i8-bmK">
                         <rect key="frame" x="0.0" y="0.0" width="836" height="636"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -745,7 +745,7 @@
         <!--Rooms-->
         <scene sceneID="yjI-b3-CbI">
             <objects>
-                <viewController title="Rooms" id="YQX-fI-txq" sceneMemberID="viewController">
+                <viewController title="Rooms" id="YQX-fI-txq" customClass="RoomController" customModule="IEIScheduler" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="pZW-ma-qXz">
                         <rect key="frame" x="0.0" y="0.0" width="627" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1015,7 +1015,7 @@
         <!--Teacher Preferences-->
         <scene sceneID="fUF-PR-Wwi">
             <objects>
-                <viewController title="Teacher Preferences" id="Fxc-1C-q3J" sceneMemberID="viewController">
+                <viewController title="Teacher Preferences" id="Fxc-1C-q3J" customClass="PreferenceOverrideController" customModule="IEIScheduler" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="iSP-Gu-lmZ">
                         <rect key="frame" x="0.0" y="0.0" width="821" height="370"/>
                         <autoresizingMask key="autoresizingMask"/>
