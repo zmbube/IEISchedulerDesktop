@@ -15,4 +15,7 @@ class WelcomeViewController: NSViewController {
         // Do view setup here.
     }
     
+    @IBAction func setSections(_ sender: NSButton) {
+        (self.parent as? NSTabViewController)?.selectedTabViewItemIndex=1
+    }
 }
