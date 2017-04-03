@@ -1112,14 +1112,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="519" height="370"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Av-2G-plk">
-                                <rect key="frame" x="356" y="175" width="109" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Don't Teach" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="khe-Jm-Ffm">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" size="13" name="Helvetica"/>
-                                </buttonCell>
-                            </button>
                             <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kc7-Ca-n0q">
                                 <rect key="frame" x="11" y="4" width="136" height="290"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -1263,6 +1255,9 @@
                                 <buttonCell key="cell" type="push" title="Teach" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6t3-eV-D2p">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" size="13" name="Helvetica"/>
+                                    <connections>
+                                        <action selector="Teach:" target="Fxc-1C-q3J" id="w2v-ji-Kj9"/>
+                                    </connections>
                                 </buttonCell>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aTr-KS-Kwm">
@@ -1274,8 +1269,23 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Av-2G-plk">
+                                <rect key="frame" x="373" y="157" width="109" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Don't Teach" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="khe-Jm-Ffm">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="13" name="Helvetica"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="dontTeach:" target="Fxc-1C-q3J" id="uxb-5t-uFk"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="classTable" destination="3XZ-QL-vtx" id="9Jm-yQ-SiZ"/>
+                        <outlet property="teacherTable" destination="3fS-Ry-RvY" id="4SK-ai-5Ft"/>
+                    </connections>
                 </viewController>
                 <customObject id="sKW-j1-4jK" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
