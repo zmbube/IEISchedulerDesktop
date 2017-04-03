@@ -16,6 +16,9 @@ class WelcomeViewController: NSViewController {
     }
     
     @IBAction func setSections(_ sender: NSButton) {
-        (self.parent as? NSTabViewController)?.selectedTabViewItemIndex=1
+        
+    }
+    @IBAction func finishedSections(_ sender: NSButton) {
+         (self.parent as? NSTabViewController)?.selectedTabViewItemIndex=1
     }
 }
