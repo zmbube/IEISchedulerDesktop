@@ -1,9 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1421" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
-        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11201"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -702,6 +701,74 @@
             </objects>
             <point key="canvasLocation" x="138" y="1106"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="b2s-LX-sfh">
+            <objects>
+                <viewController id="8tQ-Ej-VwI" sceneMemberID="viewController">
+                    <view key="view" id="EmX-nM-95y">
+                        <rect key="frame" x="0.0" y="0.0" width="563" height="374"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sor-Lt-Tys">
+                                <rect key="frame" x="196" y="223" width="66" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Username" id="Qji-Vd-zqF">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SYG-3P-IX3">
+                                <rect key="frame" x="196" y="177" width="63" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Password" id="kmN-tr-nhK">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r46-Ze-ME8">
+                                <rect key="frame" x="268" y="218" width="96" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="hy4-LS-7CJ">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZvQ-SG-ykG">
+                                <rect key="frame" x="268" y="177" width="96" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="mod-06-sG8">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DK5-Ct-a2B">
+                                <rect key="frame" x="244" y="127" width="74" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Login" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Y8H-my-65i">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WKT-YZ-tMx">
+                                <rect key="frame" x="240" y="315" width="83" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Login" id="RjU-aT-OWj">
+                                    <font key="font" metaFont="system" size="32"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                    </view>
+                </viewController>
+                <customObject id="sL0-xe-YtW" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="574.5" y="-565"/>
+        </scene>
         <!--Tab View Controller-->
         <scene sceneID="b4o-ZC-8AN">
             <objects>
@@ -854,7 +921,7 @@
                                     </subviews>
                                 </clipView>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="bT1-hD-dWo">
-                                    <rect key="frame" x="1" y="-16" width="0.0" height="16"/>
+                                    <rect key="frame" x="1" y="-15" width="0.0" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="R42-i7-xhL">
@@ -909,6 +976,9 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="removeRoom:" target="YQX-fI-txq" id="RSx-Ge-kVa"/>
+                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l0u-KR-Cix">
                                 <rect key="frame" x="311" y="40" width="127" height="32"/>
@@ -917,6 +987,9 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="addRoom:" target="YQX-fI-txq" id="2wo-py-XuI"/>
+                                </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uIO-nf-eXr">
                                 <rect key="frame" x="214" y="141" width="31" height="18"/>
@@ -925,6 +998,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="timeSelect:" target="YQX-fI-txq" id="0T3-V1-QJF"/>
+                                </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zUy-yT-WeZ">
                                 <rect key="frame" x="249" y="141" width="31" height="18"/>
@@ -933,6 +1009,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="timeSelect:" target="YQX-fI-txq" id="PJX-qh-0tc"/>
+                                </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E5t-3J-mFC">
                                 <rect key="frame" x="284" y="141" width="37" height="18"/>
@@ -941,6 +1020,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="timeSelect:" target="YQX-fI-txq" id="hpm-yF-mhq"/>
+                                </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ag3-HK-rif">
                                 <rect key="frame" x="325" y="141" width="34" height="18"/>
@@ -949,6 +1031,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="timeSelect:" target="YQX-fI-txq" id="7N1-h8-PRx"/>
+                                </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="viB-2w-YKP">
                                 <rect key="frame" x="363" y="141" width="36" height="18"/>
@@ -957,6 +1042,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="timeSelect:" target="YQX-fI-txq" id="2G7-lb-Rxp"/>
+                                </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mi1-Jz-c6W">
                                 <rect key="frame" x="403" y="141" width="28" height="18"/>
@@ -965,6 +1053,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="timeSelect:" target="YQX-fI-txq" id="dU6-u0-2Us"/>
+                                </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NoA-U4-DDL">
                                 <rect key="frame" x="435" y="141" width="30" height="18"/>
@@ -973,6 +1064,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="timeSelect:" target="YQX-fI-txq" id="wKh-0m-iBz"/>
+                                </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xer-Sb-nBu">
                                 <rect key="frame" x="469" y="141" width="31" height="18"/>
@@ -981,6 +1075,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="timeSelect:" target="YQX-fI-txq" id="7kp-2g-DDC"/>
+                                </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d59-mk-IPU">
                                 <rect key="frame" x="504" y="141" width="31" height="18"/>
@@ -989,6 +1086,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="timeSelect:" target="YQX-fI-txq" id="ds3-hg-aFo"/>
+                                </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LGv-fc-chc">
                                 <rect key="frame" x="271" y="80" width="42" height="18"/>
@@ -997,6 +1097,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" size="13" name="Helvetica"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="dateSelect:" target="YQX-fI-txq" id="bVm-47-udB"/>
+                                </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Yd-NV-0MV">
                                 <rect key="frame" x="317" y="80" width="37" height="18"/>
@@ -1005,6 +1108,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" size="13" name="Helvetica"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="dateSelect:" target="YQX-fI-txq" id="KbE-Qa-iMW"/>
+                                </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="99C-MX-d9m">
                                 <rect key="frame" x="358" y="80" width="41" height="18"/>
@@ -1013,6 +1119,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" size="13" name="Helvetica"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="dateSelect:" target="YQX-fI-txq" id="eKy-nx-8rt"/>
+                                </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jc7-uj-rhS">
                                 <rect key="frame" x="403" y="80" width="39" height="18"/>
@@ -1021,6 +1130,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" size="13" name="Helvetica"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="dateSelect:" target="YQX-fI-txq" id="rvt-rc-awp"/>
+                                </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tz4-dR-75D">
                                 <rect key="frame" x="439" y="80" width="38" height="18"/>
@@ -1029,9 +1141,17 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" size="13" name="Helvetica"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="dateSelect:" target="YQX-fI-txq" id="aam-5U-wTD"/>
+                                </connections>
                             </button>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="buildingEnter" destination="pZW-ma-qXz" id="0U0-Ps-p3X"/>
+                        <outlet property="roomNumberEnter" destination="gvW-Ci-Q3q" id="aUP-QR-e8A"/>
+                        <outlet property="roomSelect" destination="bDf-6S-5pm" id="XIf-ej-uTu"/>
+                    </connections>
                 </viewController>
                 <customObject id="zqb-UO-hw3" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1045,14 +1165,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="519" height="370"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Av-2G-plk">
-                                <rect key="frame" x="356" y="175" width="109" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Don't Teach" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="khe-Jm-Ffm">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" size="13" name="Helvetica"/>
-                                </buttonCell>
-                            </button>
                             <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kc7-Ca-n0q">
                                 <rect key="frame" x="11" y="4" width="136" height="290"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -1105,10 +1217,10 @@
                                     </subviews>
                                 </clipView>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="Fe5-yX-jr9">
-                                    <rect key="frame" x="1" y="7" width="0.0" height="16"/>
+                                    <rect key="frame" x="1" y="8" width="0.0" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="c9y-5f-KW9">
+                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="c9y-5f-KW9">
                                     <rect key="frame" x="224" y="17" width="15" height="102"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
@@ -1169,10 +1281,10 @@
                                     </subviews>
                                 </clipView>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="QaW-Wg-pU8">
-                                    <rect key="frame" x="1" y="7" width="0.0" height="16"/>
+                                    <rect key="frame" x="1" y="8" width="0.0" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="yQA-LD-dZO">
+                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="yQA-LD-dZO">
                                     <rect key="frame" x="224" y="17" width="15" height="102"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
@@ -1196,6 +1308,9 @@
                                 <buttonCell key="cell" type="push" title="Teach" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6t3-eV-D2p">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" size="13" name="Helvetica"/>
+                                    <connections>
+                                        <action selector="Teach:" target="Fxc-1C-q3J" id="w2v-ji-Kj9"/>
+                                    </connections>
                                 </buttonCell>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aTr-KS-Kwm">
@@ -1207,8 +1322,23 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Av-2G-plk">
+                                <rect key="frame" x="373" y="157" width="109" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Don't Teach" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="khe-Jm-Ffm">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="13" name="Helvetica"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="dontTeach:" target="Fxc-1C-q3J" id="uxb-5t-uFk"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="classTable" destination="3XZ-QL-vtx" id="9Jm-yQ-SiZ"/>
+                        <outlet property="teacherTable" destination="3fS-Ry-RvY" id="4SK-ai-5Ft"/>
+                    </connections>
                 </viewController>
                 <customObject id="sKW-j1-4jK" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1277,7 +1407,7 @@
                                                             <rect key="frame" x="1" y="0.0" width="220" height="34"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Mu-9W-2fz">
+                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="3Mu-9W-2fz">
                                                                     <rect key="frame" x="-2" y="17" width="224" height="17"/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="CQw-Ks-HNS">
                                                                         <font key="font" metaFont="system"/>
@@ -1285,7 +1415,7 @@
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                 </textField>
-                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IKI-09-4n7">
+                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IKI-09-4n7">
                                                                     <rect key="frame" x="-2" y="0.0" width="224" height="17"/>
                                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="pRY-2V-5Sy">
                                                                         <font key="font" metaFont="system"/>
@@ -1494,6 +1624,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="sectionRadioButton:" target="DuS-XL-YxA" id="QrI-z7-Ikp"/>
+                                </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="skz-L2-fKO">
                                 <rect key="frame" x="304" y="198" width="50" height="17"/>
@@ -1511,6 +1644,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="sectionRadioButton:" target="DuS-XL-YxA" id="BVm-7C-cqs"/>
+                                </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LXb-aw-4SW">
                                 <rect key="frame" x="461" y="197" width="31" height="18"/>
@@ -1519,6 +1655,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="sectionRadioButton:" target="DuS-XL-YxA" id="T9C-Ic-JWA"/>
+                                </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jse-iL-zGi">
                                 <rect key="frame" x="425" y="197" width="31" height="18"/>
@@ -1527,6 +1666,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="sectionRadioButton:" target="DuS-XL-YxA" id="wMU-g9-aEZ"/>
+                                </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uRj-KU-qhU">
                                 <rect key="frame" x="493" y="197" width="30" height="18"/>
@@ -1535,6 +1677,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="sectionRadioButton:" target="DuS-XL-YxA" id="xfM-Ey-Cvg"/>
+                                </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ILo-n8-2Sm">
                                 <rect key="frame" x="326" y="174" width="28" height="18"/>
@@ -1543,6 +1688,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="selectSkill:" target="DuS-XL-YxA" id="KNe-v7-gqf"/>
+                                </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="afh-HV-1Jh">
                                 <rect key="frame" x="358" y="174" width="30" height="18"/>
@@ -1551,6 +1699,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="selectSkill:" target="DuS-XL-YxA" id="AVh-hv-QCg"/>
+                                </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hI7-CL-npj">
                                 <rect key="frame" x="390" y="174" width="31" height="18"/>
@@ -1559,6 +1710,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="selectSkill:" target="DuS-XL-YxA" id="tFg-Rb-CLI"/>
+                                </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3af-RT-3Fr">
                                 <rect key="frame" x="422" y="174" width="31" height="18"/>
@@ -1567,6 +1721,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="selectSkill:" target="DuS-XL-YxA" id="oge-ZF-h8d"/>
+                                </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6a1-Td-3Sw">
                                 <rect key="frame" x="454" y="174" width="38" height="18"/>
@@ -1575,6 +1732,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="selectSkill:" target="DuS-XL-YxA" id="hxZ-GV-Lgc"/>
+                                </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K4O-5i-cgw">
                                 <rect key="frame" x="234" y="521" width="369" height="17"/>
@@ -1603,6 +1763,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="selectSkill:" target="DuS-XL-YxA" id="BCT-gZ-ZyZ"/>
+                                </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8bb-Zk-Lcm">
                                 <rect key="frame" x="314" y="222" width="116" height="18"/>
@@ -1611,6 +1774,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="gradOrUndergradRadioButton:" target="DuS-XL-YxA" id="TLz-z1-Clc"/>
+                                </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pPr-qZ-8R3">
                                 <rect key="frame" x="435" y="222" width="79" height="18"/>
@@ -1619,6 +1785,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="gradOrUndergradRadioButton:" target="DuS-XL-YxA" id="bG0-wi-Jbm"/>
+                                </connections>
                             </button>
                             <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VxH-gb-4bU">
                                 <rect key="frame" x="470" y="294" width="76" height="26"/>
@@ -1640,6 +1809,9 @@
                                         </items>
                                     </menu>
                                 </popUpButtonCell>
+                                <connections>
+                                    <action selector="lvl6UndergradPopUpButton:" target="DuS-XL-YxA" id="O9s-4u-zo1"/>
+                                </connections>
                             </popUpButton>
                             <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H0n-2D-qbC">
                                 <rect key="frame" x="470" y="269" width="76" height="26"/>
@@ -1661,6 +1833,9 @@
                                         </items>
                                     </menu>
                                 </popUpButtonCell>
+                                <connections>
+                                    <action selector="lvl6GradPopUpButton:" target="DuS-XL-YxA" id="JEd-hP-g9O"/>
+                                </connections>
                             </popUpButton>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HdI-Mx-fZO">
                                 <rect key="frame" x="637" y="128" width="72" height="32"/>
@@ -1693,6 +1868,15 @@
                             </textField>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="fundamentalTextField" destination="IRs-td-P8N" id="pWe-SO-F1H"/>
+                        <outlet property="lvl1TextField" destination="hBC-Do-kpg" id="aDq-gs-jBc"/>
+                        <outlet property="lvl2TextField" destination="Ugp-pq-Nz7" id="B1f-uO-hCX"/>
+                        <outlet property="lvl3TextField" destination="8Xz-9S-58r" id="w0s-nK-GQV"/>
+                        <outlet property="lvl4TextField" destination="LOy-9c-oRa" id="rF3-QM-6T2"/>
+                        <outlet property="lvl5GradTextField" destination="Dxb-z6-bcB" id="coG-Il-9Fv"/>
+                        <outlet property="lvl5UndergradTextField" destination="p8I-Fh-ZSI" id="u4z-GQ-sGJ"/>
+                    </connections>
                 </viewController>
                 <customObject id="UPh-Ov-z3h" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

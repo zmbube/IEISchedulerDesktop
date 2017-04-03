@@ -9,10 +9,19 @@
 import Cocoa
 
 class PreferenceOverrideController: NSViewController {
+    @IBOutlet weak var teacherTable: NSTableView!
+    @IBOutlet weak var classTable: NSTableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+        
+        
+        
     }
     
+    @IBAction func teach(_ sender: AnyObject) {
+    }
+    @IBAction func dontTeach(_ sender: AnyObject) {
+    }
 }
