@@ -1624,6 +1624,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="sectionRadioButton:" target="DuS-XL-YxA" id="QrI-z7-Ikp"/>
+                                </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="skz-L2-fKO">
                                 <rect key="frame" x="304" y="198" width="50" height="17"/>
@@ -1641,6 +1644,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="sectionRadioButton:" target="DuS-XL-YxA" id="BVm-7C-cqs"/>
+                                </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LXb-aw-4SW">
                                 <rect key="frame" x="461" y="197" width="31" height="18"/>
@@ -1649,6 +1655,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="sectionRadioButton:" target="DuS-XL-YxA" id="T9C-Ic-JWA"/>
+                                </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jse-iL-zGi">
                                 <rect key="frame" x="425" y="197" width="31" height="18"/>
@@ -1657,6 +1666,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="sectionRadioButton:" target="DuS-XL-YxA" id="wMU-g9-aEZ"/>
+                                </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uRj-KU-qhU">
                                 <rect key="frame" x="493" y="197" width="30" height="18"/>
@@ -1665,6 +1677,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="sectionRadioButton:" target="DuS-XL-YxA" id="xfM-Ey-Cvg"/>
+                                </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ILo-n8-2Sm">
                                 <rect key="frame" x="326" y="174" width="28" height="18"/>
@@ -1673,6 +1688,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="selectSkill:" target="DuS-XL-YxA" id="KNe-v7-gqf"/>
+                                </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="afh-HV-1Jh">
                                 <rect key="frame" x="358" y="174" width="30" height="18"/>
@@ -1681,6 +1699,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="selectSkill:" target="DuS-XL-YxA" id="AVh-hv-QCg"/>
+                                </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hI7-CL-npj">
                                 <rect key="frame" x="390" y="174" width="31" height="18"/>
@@ -1689,6 +1710,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="selectSkill:" target="DuS-XL-YxA" id="tFg-Rb-CLI"/>
+                                </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3af-RT-3Fr">
                                 <rect key="frame" x="422" y="174" width="31" height="18"/>
@@ -1697,6 +1721,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="selectSkill:" target="DuS-XL-YxA" id="oge-ZF-h8d"/>
+                                </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6a1-Td-3Sw">
                                 <rect key="frame" x="454" y="174" width="38" height="18"/>
@@ -1705,6 +1732,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="selectSkill:" target="DuS-XL-YxA" id="hxZ-GV-Lgc"/>
+                                </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K4O-5i-cgw">
                                 <rect key="frame" x="234" y="521" width="369" height="17"/>
@@ -1733,6 +1763,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="selectSkill:" target="DuS-XL-YxA" id="BCT-gZ-ZyZ"/>
+                                </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8bb-Zk-Lcm">
                                 <rect key="frame" x="314" y="222" width="116" height="18"/>
@@ -1741,6 +1774,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="gradOrUndergradRadioButton:" target="DuS-XL-YxA" id="TLz-z1-Clc"/>
+                                </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pPr-qZ-8R3">
                                 <rect key="frame" x="435" y="222" width="79" height="18"/>
@@ -1749,6 +1785,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="gradOrUndergradRadioButton:" target="DuS-XL-YxA" id="bG0-wi-Jbm"/>
+                                </connections>
                             </button>
                             <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VxH-gb-4bU">
                                 <rect key="frame" x="470" y="294" width="76" height="26"/>
@@ -1770,6 +1809,9 @@
                                         </items>
                                     </menu>
                                 </popUpButtonCell>
+                                <connections>
+                                    <action selector="lvl6UndergradPopUpButton:" target="DuS-XL-YxA" id="O9s-4u-zo1"/>
+                                </connections>
                             </popUpButton>
                             <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H0n-2D-qbC">
                                 <rect key="frame" x="470" y="269" width="76" height="26"/>
@@ -1791,6 +1833,9 @@
                                         </items>
                                     </menu>
                                 </popUpButtonCell>
+                                <connections>
+                                    <action selector="lvl6GradPopUpButton:" target="DuS-XL-YxA" id="JEd-hP-g9O"/>
+                                </connections>
                             </popUpButton>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HdI-Mx-fZO">
                                 <rect key="frame" x="637" y="128" width="72" height="32"/>
@@ -1823,6 +1868,15 @@
                             </textField>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="fundamentalTextField" destination="IRs-td-P8N" id="pWe-SO-F1H"/>
+                        <outlet property="lvl1TextField" destination="hBC-Do-kpg" id="aDq-gs-jBc"/>
+                        <outlet property="lvl2TextField" destination="Ugp-pq-Nz7" id="B1f-uO-hCX"/>
+                        <outlet property="lvl3TextField" destination="8Xz-9S-58r" id="w0s-nK-GQV"/>
+                        <outlet property="lvl4TextField" destination="LOy-9c-oRa" id="rF3-QM-6T2"/>
+                        <outlet property="lvl5GradTextField" destination="Dxb-z6-bcB" id="coG-Il-9Fv"/>
+                        <outlet property="lvl5UndergradTextField" destination="p8I-Fh-ZSI" id="u4z-GQ-sGJ"/>
+                    </connections>
                 </viewController>
                 <customObject id="UPh-Ov-z3h" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
