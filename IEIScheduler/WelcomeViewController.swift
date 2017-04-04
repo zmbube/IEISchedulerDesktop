@@ -10,35 +10,38 @@ import Cocoa
 
 class WelcomeViewController: NSViewController {
     
-    @IBOutlet weak var fundamentalTextField: NSTextField!
-    @IBOutlet weak var lvl1TextField: NSTextField!
-    @IBOutlet weak var lvl2TextField: NSTextField!
-    @IBOutlet weak var lvl3TextField: NSTextField!
-    @IBOutlet weak var lvl4TextField: NSTextField!
-    @IBOutlet weak var lvl5UndergradTextField: NSTextField!
-    @IBOutlet weak var lvl5GradTextField: NSTextField!
-    
-    @IBAction func lvl6UndergradPopUpButton(_ sender: AnyObject) {
-    }
-    @IBAction func lvl6GradPopUpButton(_ sender: AnyObject) {
-    }
-    @IBAction func gradOrUndergradRadioButton(_ sender: AnyObject) {
-    }
-    @IBAction func sectionRadioButton(_ sender: AnyObject) {
-    }
-    @IBAction func selectSkill(_ sender: AnyObject) {
-    }
-    
+    @IBOutlet weak var fundamentalPopUpButton: NSPopUpButton!
+    @IBOutlet weak var lvl1PopUpButton: NSPopUpButton!
+    @IBOutlet weak var lvl2PopUpButton: NSPopUpButton!
+    @IBOutlet weak var lvl3PopUpButton: NSPopUpButton!
+    @IBOutlet weak var lvl4PopUpButton: NSPopUpButton!
+    @IBOutlet weak var lvl5UndergradPopUpButton: NSPopUpButton!
+    @IBOutlet weak var lvl5GradPopUpButton: NSPopUpButton!
+    @IBOutlet weak var lvl6UndergradPopUpButton: NSPopUpButton!
+    @IBOutlet weak var lvl6GradPopUpButton: NSPopUpButton!
+
+    var selectedSkills:[Int32:Bool]=[1:true,2:true,3:true,4:true,5:true,6:true]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
     }
     
+    @IBAction func gradOrUndergradRadioButton(_ sender: AnyObject) {
+    }
+    @IBAction func sectionRadioButton(_ sender: AnyObject) {
+    }
+    @IBAction func selectSkill(_ sender: NSButton) {
+        let skill = Int32(sender.title)
+        selectedSkills[skill!] = !selectedSkills[skill!]!
+    }
+
     @IBAction func setSections(_ sender: NSButton) {
         
     }
     @IBAction func finishedSections(_ sender: NSButton) {
+        
+        
          (self.parent as? NSTabViewController)?.selectedTabViewItemIndex=1
     }
 }

@@ -9,17 +9,15 @@
 import Cocoa
 
 class ViewController: NSViewController {
-
-    var scheduler=Schedule()
-    let parser=SurveyResultsParser()
     var teachers:[Teacher]=[]
     @IBOutlet weak var optionsTableContainer: NSView!
     var optionsTableView:ClassOptionsTable?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        teachers = parser.getTeachers()
+
     }
 
     override var representedObject: Any? {

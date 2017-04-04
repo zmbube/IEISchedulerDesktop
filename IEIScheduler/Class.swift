@@ -9,11 +9,11 @@
 import Cocoa
 
 class Class: NSObject {
-    var teacher:Teacher
-    var time:String
-    var room:Room
-    var classTitle:String
-    var sectNum:String
+    var teacher:Teacher?
+    var time:String?
+    var room:Room?
+    var classTitle:String?
+    var sectNum:String?
     
     
     init(teacher:Teacher,time:String,room:Room,classTitle:String,sectNum:String){

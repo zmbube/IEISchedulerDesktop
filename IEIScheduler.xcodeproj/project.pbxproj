@@ -20,6 +20,7 @@
 		B66E1FE41E4CDFA70049416C /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66E1FE31E4CDFA70049416C /* Teacher.swift */; };
 		B66E1FE61E4CDFB00049416C /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66E1FE51E4CDFB00049416C /* Room.swift */; };
 		B66E1FE81E4CFFE20049416C /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66E1FE71E4CFFE20049416C /* Class.swift */; };
+		B6B2032E1E9405A300BB7AEC /* AdminTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2032D1E9405A300BB7AEC /* AdminTabViewController.swift */; };
 		B6F4A3671E8193CF00DB9950 /* SurveyResultsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F4A3661E8193CF00DB9950 /* SurveyResultsParser.swift */; };
 		B6F66E731E929D7000ABFC68 /* PreferenceOverrideController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F66E721E929D7000ABFC68 /* PreferenceOverrideController.swift */; };
 		B6F66E751E929E1D00ABFC68 /* RoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F66E741E929E1D00ABFC68 /* RoomController.swift */; };
@@ -63,6 +64,7 @@
 		B66E1FE31E4CDFA70049416C /* Teacher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Teacher.swift; sourceTree = "<group>"; };
 		B66E1FE51E4CDFB00049416C /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		B66E1FE71E4CFFE20049416C /* Class.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Class.swift; sourceTree = "<group>"; };
+		B6B2032D1E9405A300BB7AEC /* AdminTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminTabViewController.swift; sourceTree = "<group>"; };
 		B6F4A3661E8193CF00DB9950 /* SurveyResultsParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyResultsParser.swift; sourceTree = "<group>"; };
 		B6F66E721E929D7000ABFC68 /* PreferenceOverrideController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceOverrideController.swift; sourceTree = "<group>"; };
 		B6F66E741E929E1D00ABFC68 /* RoomController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomController.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 		B66E1FB51E4CDEEF0049416C /* IEIScheduler */ = {
 			isa = PBXGroup;
 			children = (
+				B6B2032D1E9405A300BB7AEC /* AdminTabViewController.swift */,
 				B66E1FE71E4CFFE20049416C /* Class.swift */,
 				B66E1FB61E4CDEEF0049416C /* AppDelegate.swift */,
 				B66E1FB81E4CDEEF0049416C /* ViewController.swift */,
@@ -300,6 +303,7 @@
 				B66E1FB71E4CDEEF0049416C /* AppDelegate.swift in Sources */,
 				B66E1FE61E4CDFB00049416C /* Room.swift in Sources */,
 				B6F66E731E929D7000ABFC68 /* PreferenceOverrideController.swift in Sources */,
+				B6B2032E1E9405A300BB7AEC /* AdminTabViewController.swift in Sources */,
 				B6F66E771E929EB500ABFC68 /* AdminController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
