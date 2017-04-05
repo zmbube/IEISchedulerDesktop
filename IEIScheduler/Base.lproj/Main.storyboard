@@ -1723,17 +1723,6 @@
                                     <action selector="selectSkill:" target="DuS-XL-YxA" id="BCT-gZ-ZyZ"/>
                                 </connections>
                             </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8bb-Zk-Lcm">
-                                <rect key="frame" x="314" y="222" width="116" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="radio" title="UnderGraduate" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="NjS-qU-EX5">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="gradOrUndergradRadioButton:" target="DuS-XL-YxA" id="TLz-z1-Clc"/>
-                                </connections>
-                            </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pPr-qZ-8R3">
                                 <rect key="frame" x="435" y="222" width="79" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -1765,6 +1754,9 @@
                                         </items>
                                     </menu>
                                 </popUpButtonCell>
+                                <connections>
+                                    <action selector="selectedChanged:" target="DuS-XL-YxA" id="5hi-q9-ERF"/>
+                                </connections>
                             </popUpButton>
                             <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H0n-2D-qbC">
                                 <rect key="frame" x="470" y="269" width="76" height="26"/>
@@ -1786,6 +1778,9 @@
                                         </items>
                                     </menu>
                                 </popUpButtonCell>
+                                <connections>
+                                    <action selector="selectedChanged:" target="DuS-XL-YxA" id="mPM-27-Q3t"/>
+                                </connections>
                             </popUpButton>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HdI-Mx-fZO">
                                 <rect key="frame" x="637" y="128" width="72" height="32"/>
@@ -1945,10 +1940,22 @@
                                     </menu>
                                 </popUpButtonCell>
                             </popUpButton>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8bb-Zk-Lcm">
+                                <rect key="frame" x="304" y="222" width="116" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="radio" title="UnderGraduate" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="NjS-qU-EX5">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="gradOrUndergradRadioButton:" target="DuS-XL-YxA" id="TLz-z1-Clc"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
                         <outlet property="fundamentalPopUpButton" destination="77u-w1-muy" id="9qP-7x-cCX"/>
+                        <outlet property="gradRadioButton" destination="pPr-qZ-8R3" id="hnY-7i-uFB"/>
                         <outlet property="lvl1PopUpButton" destination="dQJ-Lc-9rC" id="H1R-tU-H7R"/>
                         <outlet property="lvl2PopUpButton" destination="I3N-zz-82C" id="YDp-Ux-HS1"/>
                         <outlet property="lvl3PopUpButton" destination="iBj-sO-Py5" id="xOR-b6-8iO"/>
@@ -1957,6 +1964,12 @@
                         <outlet property="lvl5UndergradPopUpButton" destination="aGX-GE-aGv" id="b97-TI-sZ7"/>
                         <outlet property="lvl6GradPopUpButton" destination="H0n-2D-qbC" id="q7u-Jk-Mux"/>
                         <outlet property="lvl6UndergradPopUpButton" destination="VxH-gb-4bU" id="b4v-Ge-z0z"/>
+                        <outlet property="sect1RadioButton" destination="3Pz-LL-hld" id="Na7-k7-y0a"/>
+                        <outlet property="sect2RadioButton" destination="Ang-MU-dZa" id="apz-IV-x47"/>
+                        <outlet property="sect3RadioButton" destination="jse-iL-zGi" id="yon-nm-Jfi"/>
+                        <outlet property="sect4RadioButton" destination="LXb-aw-4SW" id="Wfi-uq-zAk"/>
+                        <outlet property="sect5RadioButton" destination="uRj-KU-qhU" id="cj3-qy-K0d"/>
+                        <outlet property="underGradRadioButton" destination="8bb-Zk-Lcm" id="vcR-3B-Va5"/>
                     </connections>
                 </viewController>
                 <customObject id="UPh-Ov-z3h" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
