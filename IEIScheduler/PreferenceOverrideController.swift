@@ -24,15 +24,12 @@ class PreferenceOverrideController: NSViewController {
 
     
     @IBAction func teach(_ sender: NSButton) {
-        //override the class preference and set it to 0
-        //var teacher=[Teacher]()
-        //teacher.classPreferences[] = 0
+        (self.parent as? AdminTabViewController)?.teachers[teacherTable.selectedRow].classPreferences[classes[classTable.selectedRow]]="0"
+        
 
     }
     @IBAction func dontTeach(_ sender: NSButton) {
-        //override the class preference and set it to 5
-        //var teacher=[Teacher]()
-        //teacher.classPreferences[] = 5
+        (self.parent as? AdminTabViewController)?.teachers[teacherTable.selectedRow].classPreferences[classes[classTable.selectedRow]]="5"
     }
 
 }
