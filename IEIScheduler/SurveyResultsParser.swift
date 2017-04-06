@@ -31,7 +31,7 @@ class SurveyResultsParser: NSObject {
         for prefs in classPrefs {
             for teacher in teachers {
                 if(teacher.id==(prefs["U_ID"] as! String)){
-                    teacher.classPreferences = prefs
+                    teacher.classPreferences = prefs as! NSMutableDictionary
                 }
             }
         }
@@ -74,7 +74,7 @@ class SurveyResultsParser: NSObject {
                 if let jsonResult = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSArray{
                     
                     for item in jsonResult{
-                        results.append(item as! NSDictionary)
+                        results.append(item as! NSMutableDictionary)
                     }
                 }
                 dataLoaded=true
