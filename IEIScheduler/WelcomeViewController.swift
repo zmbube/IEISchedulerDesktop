@@ -30,7 +30,7 @@ class WelcomeViewController: NSViewController {
     @IBOutlet weak var gradRadioButton: NSButton!
     @IBOutlet weak var underGradRadioButton: NSButton!
     //Dictionary binding skill number to whether or not it is selected. toggled on checkbox click
-    var selectedSkills:[Int32:Bool]=[1:true,2:true,3:true,4:true,5:true,6:true]
+    var selectedSkills:[Int:Bool]=[1:true,2:true,3:true,4:true,5:true,6:true]
     //Dictionaries for each level binding section number to an array of the classes in the section
     var fundamentalSections:[Int:[Class]]=[:]
     var level1Sections:[Int:[Class]]=[:]
@@ -41,6 +41,9 @@ class WelcomeViewController: NSViewController {
     var level6USections:[Int:[Class]]=[:]
     var level6GSections:[Int:[Class]]=[:]
     
+    var standing = ""
+    var section = 1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
@@ -49,26 +52,36 @@ class WelcomeViewController: NSViewController {
     
     @IBAction func gradOrUndergradRadioButton(_ sender: NSButton) {
         var sect=""
+        
         if(sender.title=="UnderGraduate"){
             sect=(lvl6UndergradPopUpButton.selectedItem?.title)!
-            
+            standing=""
             
         }else{
             sect=(lvl6GradPopUpButton.selectedItem?.title)!
+            standing="G"
         }
         setEnabledSectButtons(sect: sect)
     }
     @IBAction func sectionRadioButton(_ sender: NSButton) {
+        section=Int(sender.title)!
     }
     @IBAction func selectSkill(_ sender: NSButton) {
-        let skill = Int32(sender.title)
+        let skill = Int(sender.title)
         selectedSkills[skill!] = !selectedSkills[skill!]!
     }
 
     @IBAction func setSections(_ sender: NSButton) {
         if(underGradRadioButton.state==NSOnState || gradRadioButton.state==NSOnState){
             if(sectionIsSelected()){
-                
+                var classes:[Class]=[]
+                for i in 1 ... 6{
+                    let boolean = selectedSkills[i]
+                    if(boolean)!{
+                        let title="16\(i)"
+                        classes.append(Class(classTitle: title,sectNum: section))
+                    }
+                }
             }
             
         }

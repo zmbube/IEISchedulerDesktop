@@ -13,13 +13,10 @@ class Class: NSObject {
     var time:String?
     var room:Room?
     var classTitle:String?
-    var sectNum:String?
+    var sectNum:Int?
     
     
-    init(teacher:Teacher,time:String,room:Room,classTitle:String,sectNum:String){
-        self.teacher=teacher
-        self.time=time
-        self.room=room
+    init(classTitle:String,sectNum:Int){
         self.classTitle=classTitle
         self.sectNum=sectNum
         
