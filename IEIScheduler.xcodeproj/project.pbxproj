@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4956377F1E96C6D200D77639 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4956377E1E96C6D200D77639 /* LoginViewController.swift */; };
+		495637811E96C83300D77639 /* EditTeachersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495637801E96C83300D77639 /* EditTeachersController.swift */; };
 		B663B0281E918E12009CC830 /* TeacherTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B663B0271E918E12009CC830 /* TeacherTableCell.swift */; };
 		B663B02A1E9192E3009CC830 /* ClassOptionsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B663B0291E9192E3009CC830 /* ClassOptionsTable.swift */; };
 		B663B0301E91AEBA009CC830 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B663B02F1E91AEBA009CC830 /* WelcomeViewController.swift */; };
@@ -45,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4956377E1E96C6D200D77639 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		495637801E96C83300D77639 /* EditTeachersController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditTeachersController.swift; path = ../EditTeachersController.swift; sourceTree = "<group>"; };
 		B663B0271E918E12009CC830 /* TeacherTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherTableCell.swift; sourceTree = "<group>"; };
 		B663B0291E9192E3009CC830 /* ClassOptionsTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassOptionsTable.swift; sourceTree = "<group>"; };
 		B663B02F1E91AEBA009CC830 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +132,7 @@
 				B66E1FBF1E4CDEEF0049416C /* Info.plist */,
 				B66E1FE11E4CDF970049416C /* Schedule.swift */,
 				B66E1FE31E4CDFA70049416C /* Teacher.swift */,
+				495637801E96C83300D77639 /* EditTeachersController.swift */,
 				B66E1FE51E4CDFB00049416C /* Room.swift */,
 				B6F4A3661E8193CF00DB9950 /* SurveyResultsParser.swift */,
 				B663B0271E918E12009CC830 /* TeacherTableCell.swift */,
@@ -136,6 +141,7 @@
 				B6F66E721E929D7000ABFC68 /* PreferenceOverrideController.swift */,
 				B6F66E741E929E1D00ABFC68 /* RoomController.swift */,
 				B6F66E761E929EB500ABFC68 /* AdminController.swift */,
+				4956377E1E96C6D200D77639 /* LoginViewController.swift */,
 			);
 			path = IEIScheduler;
 			sourceTree = "<group>";
@@ -291,9 +297,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				495637811E96C83300D77639 /* EditTeachersController.swift in Sources */,
 				B66E1FE81E4CFFE20049416C /* Class.swift in Sources */,
 				B663B0301E91AEBA009CC830 /* WelcomeViewController.swift in Sources */,
 				B66E1FE41E4CDFA70049416C /* Teacher.swift in Sources */,
+				4956377F1E96C6D200D77639 /* LoginViewController.swift in Sources */,
 				B663B02A1E9192E3009CC830 /* ClassOptionsTable.swift in Sources */,
 				B6F66E751E929E1D00ABFC68 /* RoomController.swift in Sources */,
 				B66E1FE21E4CDF970049416C /* Schedule.swift in Sources */,

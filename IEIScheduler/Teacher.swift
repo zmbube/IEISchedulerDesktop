@@ -13,7 +13,7 @@ class Teacher: NSObject {
     var name:String
     var id:String
     var timePrefs = NSDictionary()
-    var classPreferences = NSDictionary()
+    var classPreferences = NSMutableDictionary()
     var comments = ""
     var currentHappiness:Double
     
