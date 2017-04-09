@@ -20,6 +20,9 @@ class ClassOptionsTable: NSViewController {
         classOptionsTable.dataSource=self
     }
     
+    override func viewWillAppear() {
+        classOptionsTable.reloadData()
+    }
 }
 
 extension  ClassOptionsTable: NSTableViewDataSource{
