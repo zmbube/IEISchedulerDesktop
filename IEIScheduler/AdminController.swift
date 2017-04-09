@@ -12,12 +12,13 @@ class AdminController: NSViewController {
     var scheduler=Schedule()
     let parser=SurveyResultsParser()
     var teachers:[Teacher]=[]
-    var classSections:[String]=[]
+    var classSections:[String:[Int:[Class]]]=[:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
         teachers=parser.getTeachers()
+        
     }
     
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {

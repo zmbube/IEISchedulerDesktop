@@ -37,7 +37,8 @@ class WelcomeViewController: NSViewController {
     var level2Sections:[Int:[Class]]=[:]
     var level3Sections:[Int:[Class]]=[:]
     var level4Sections:[Int:[Class]]=[:]
-    var level5Sections:[Int:[Class]]=[:]
+    var level5USections:[Int:[Class]]=[:]
+    var level5GSections:[Int:[Class]]=[:]
     var level6USections:[Int:[Class]]=[:]
     var level6GSections:[Int:[Class]]=[:]
     
@@ -71,6 +72,7 @@ class WelcomeViewController: NSViewController {
         selectedSkills[skill!] = !selectedSkills[skill!]!
     }
 
+    
     @IBAction func setSections(_ sender: NSButton) {
         if(underGradRadioButton.state==NSOnState || gradRadioButton.state==NSOnState){
             if(sectionIsSelected()){
@@ -78,25 +80,70 @@ class WelcomeViewController: NSViewController {
                 for i in 1 ... 6{
                     let boolean = selectedSkills[i]
                     if(boolean)!{
-                        let title="16\(i)"
+                        let title="16\(i)\(standing)"
                         classes.append(Class(classTitle: title,sectNum: section))
                     }
                 }
+                if(standing=="G"){
+                    level6GSections[section]=classes
+                }else{
+                    level6USections[section]=classes
+                }
             }
-            
         }
+        //TODO: Show count of currently set sections
     }
+    
     @IBAction func finishedSections(_ sender: NSButton) {
-        
-        
+        let lvlf=Int((fundamentalPopUpButton.selectedItem?.title)!)!
+        let lvl1=Int((lvl1PopUpButton.selectedItem?.title)!)!
+        let lvl2=Int((lvl2PopUpButton.selectedItem?.title)!)!
+        let lvl3=Int((lvl3PopUpButton.selectedItem?.title)!)!
+        let lvl4=Int((lvl4PopUpButton.selectedItem?.title)!)!
+        let lvl5u=Int((lvl5UndergradPopUpButton.selectedItem?.title)!)!
+        let lvl5g=Int((lvl5GradPopUpButton.selectedItem?.title)!)!
+        for i in 1 ... 5{
+            if(lvlf>=i){
+                fundamentalSections[i]=[Class(classTitle:"101",sectNum:i),Class(classTitle:"102",sectNum:i),Class(classTitle:"103",sectNum:i),Class(classTitle:"104",sectNum:i),Class(classTitle:"105",sectNum:i),Class(classTitle:"106",sectNum:i)]
+            }
+            if(lvl1>=i){
+                level1Sections[i]=[Class(classTitle:"111",sectNum:i),Class(classTitle:"112",sectNum:i),Class(classTitle:"113",sectNum:i),Class(classTitle:"114",sectNum:i),Class(classTitle:"115",sectNum:i),Class(classTitle:"116",sectNum:i)]
+            }
+            if(lvl2>=i){
+                level2Sections[i]=[Class(classTitle:"121",sectNum:i),Class(classTitle:"122",sectNum:i),Class(classTitle:"123",sectNum:i),Class(classTitle:"124",sectNum:i),Class(classTitle:"125",sectNum:i),Class(classTitle:"126",sectNum:i)]
+
+            }
+            if(lvl3>=i){
+                level3Sections[i]=[Class(classTitle:"131",sectNum:i),Class(classTitle:"132",sectNum:i),Class(classTitle:"133",sectNum:i),Class(classTitle:"134",sectNum:i),Class(classTitle:"135",sectNum:i),Class(classTitle:"136",sectNum:i)]
+
+            }
+            if(lvl4>=i){
+                level4Sections[i]=[Class(classTitle:"141",sectNum:i),Class(classTitle:"142",sectNum:i),Class(classTitle:"143",sectNum:i),Class(classTitle:"144",sectNum:i),Class(classTitle:"145",sectNum:i),Class(classTitle:"146",sectNum:i)]
+
+            }
+            if(lvl5u>=i){
+                level5USections[i]=[Class(classTitle:"151",sectNum:i),Class(classTitle:"152",sectNum:i),Class(classTitle:"153",sectNum:i),Class(classTitle:"154",sectNum:i),Class(classTitle:"155",sectNum:i),Class(classTitle:"156",sectNum:i)]
+
+            }
+            if(lvl5g>=i){
+                level5USections[i]=[Class(classTitle:"151G",sectNum:i),Class(classTitle:"152G",sectNum:i),Class(classTitle:"153G",sectNum:i),Class(classTitle:"154G",sectNum:i),Class(classTitle:"155G",sectNum:i),Class(classTitle:"156G",sectNum:i)]
+
+            }
+        }
+        let classSections=["f":fundamentalSections,"1":level1Sections,"2":level2Sections,"3":level3Sections,"4":level4Sections,"5u":level5USections,"5g":level5GSections,"6u":level6USections,"6g":level6GSections]
+        ((self.parent as? NSTabViewController)?.tabViewItems[1].viewController as? AdminController)?.classSections=classSections
          (self.parent as? NSTabViewController)?.selectedTabViewItemIndex=1
     }
+    
+    
     @IBAction func selectedChanged(_ sender: NSPopUpButton) {
-        sect1RadioButton.state=1
+        sect1RadioButton.state=0
         sect2RadioButton.state=0
         sect3RadioButton.state=0
         sect4RadioButton.state=0
         sect5RadioButton.state=0
+        underGradRadioButton.state=0
+        gradRadioButton.state=0
     }
     
     func setEnabledSectButtons(sect: String){
@@ -113,7 +160,6 @@ class WelcomeViewController: NSViewController {
         }
         if(sect<="3"){
             sect4RadioButton.isEnabled=false
-            
         }
         if(sect<="4"){
             sect5RadioButton.isEnabled=false
