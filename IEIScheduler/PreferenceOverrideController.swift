@@ -12,6 +12,7 @@ class PreferenceOverrideController: NSViewController {
     @IBOutlet weak var teacherTable: NSTableView!
     @IBOutlet weak var classTable: NSTableView!
     let classes = ["101", "102", "103", "104", "105", "106", "111", "112", "113", "114", "115", "116", "121", "122", "123", "124", "125", "126", "131", "132", "133", "134", "135", "136", "141", "142", "143", "144", "145", "146", "151", "152", "153", "154", "155", "156", "151G", "152G", "153G", "154G", "155G", "156G"]
+    var adminTab:AdminTabViewController?
 
 
     override func viewDidLoad() {
@@ -21,6 +22,7 @@ class PreferenceOverrideController: NSViewController {
         classTable.dataSource=self
         teacherTable.delegate=self
         teacherTable.dataSource=self
+        adminTab=(self.parent as? AdminTabViewController)
     }
     
     override func viewWillAppear() {
@@ -30,12 +32,12 @@ class PreferenceOverrideController: NSViewController {
 
     
     @IBAction func teach(_ sender: NSButton) {
-        (self.parent as? AdminTabViewController)?.teachers[teacherTable.selectedRow].classPreferences[classes[classTable.selectedRow]]="0"
+        adminTab?.teachers[teacherTable.selectedRow].classPreferences[classes[classTable.selectedRow]]="0"
         
 
     }
     @IBAction func dontTeach(_ sender: NSButton) {
-        (self.parent as? AdminTabViewController)?.teachers[teacherTable.selectedRow].classPreferences[classes[classTable.selectedRow]]="5"
+        adminTab?.teachers[teacherTable.selectedRow].classPreferences[classes[classTable.selectedRow]]="5"
     }
 
 }
@@ -46,7 +48,7 @@ extension  PreferenceOverrideController: NSTableViewDataSource{
             return classes.count
         }
         else if(tableView==teacherTable){
-            return ((self.parent as? AdminTabViewController)?.teachers.count)!
+            return (adminTab?.teachers.count)!
         }
      return 0
     }
@@ -66,7 +68,7 @@ extension PreferenceOverrideController: NSTableViewDelegate{
         //cell identifier is currently set to classCell, might need changeed later on to the teacherCell
         if tableView == self.teacherTable{
             if let cell = tableView.make(withIdentifier: "teacherCell", owner: nil) as? NSTableCellView {
-                cell.textField?.stringValue = ((self.parent as? AdminTabViewController)?.teachers[row].name)!
+                cell.textField?.stringValue = (adminTab?.teachers[row].name)!
                 return cell
             }
         }
