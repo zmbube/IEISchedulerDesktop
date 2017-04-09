@@ -22,6 +22,11 @@ class PreferenceOverrideController: NSViewController {
         teacherTable.delegate=self
         teacherTable.dataSource=self
     }
+    
+    override func viewWillAppear() {
+        teacherTable.reloadData()
+        classTable.reloadData()
+    }
 
     
     @IBAction func teach(_ sender: NSButton) {
@@ -37,7 +42,13 @@ class PreferenceOverrideController: NSViewController {
 extension  PreferenceOverrideController: NSTableViewDataSource{
     
     func numberOfRows(in tableView: NSTableView) -> Int {
-        return classes.count
+        if(tableView==classTable){
+            return classes.count
+        }
+        else if(tableView==teacherTable){
+            return ((self.parent as? AdminTabViewController)?.teachers.count)!
+        }
+     return 0
     }
 }
 
@@ -54,7 +65,7 @@ extension PreferenceOverrideController: NSTableViewDelegate{
         }
         //cell identifier is currently set to classCell, might need changeed later on to the teacherCell
         if tableView == self.teacherTable{
-            if let cell = tableView.make(withIdentifier: cellIdentifier, owner: nil) as? NSTableCellView {
+            if let cell = tableView.make(withIdentifier: "teacherCell", owner: nil) as? NSTableCellView {
                 cell.textField?.stringValue = ((self.parent as? AdminTabViewController)?.teachers[row].name)!
                 return cell
             }

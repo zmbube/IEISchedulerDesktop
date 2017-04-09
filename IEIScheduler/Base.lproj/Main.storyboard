@@ -1302,11 +1302,11 @@
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView id="jPo-UA-qFG">
+                                                        <tableCellView identifier="teacherCell" id="jPo-UA-qFG">
                                                             <rect key="frame" x="1" y="1" width="131" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <textField identifier="teacherCell" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Yn-L5-Oi9">
+                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Yn-L5-Oi9">
                                                                     <rect key="frame" x="0.0" y="0.0" width="131" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="VhQ-9f-zND">
@@ -1366,11 +1366,11 @@
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView id="n9T-sW-bJF">
+                                                        <tableCellView identifier="classCell" id="n9T-sW-bJF">
                                                             <rect key="frame" x="1" y="1" width="138" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <textField identifier="classCell" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C9t-t2-3Yv">
+                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C9t-t2-3Yv">
                                                                     <rect key="frame" x="0.0" y="0.0" width="138" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="kwu-uj-wpH">
@@ -1418,10 +1418,10 @@
                                 <buttonCell key="cell" type="push" title="Teach" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6t3-eV-D2p">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" size="13" name="Helvetica"/>
-                                    <connections>
-                                        <action selector="Teach:" target="Fxc-1C-q3J" id="w2v-ji-Kj9"/>
-                                    </connections>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="teach:" target="Fxc-1C-q3J" id="VOG-2d-kBj"/>
+                                </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aTr-KS-Kwm">
                                 <rect key="frame" x="68" y="304" width="385" height="46"/>
