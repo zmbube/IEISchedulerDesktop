@@ -9,14 +9,76 @@
 import Cocoa
 
 class EditTeachersController: NSViewController {
-
-    @IBOutlet weak var editTeacherTable: NSScrollView!
+    
+    @IBOutlet weak var editTeacherTable: NSTableView!
+    
+    var teachers:[Teacher]=[]
+    var response=""
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         // Do view setup here.
     }
    
     @IBAction func deleteTeacherEditButton(_ sender: AnyObject) {
+        let index=editTeacherTable.selectedRow
+        let id=teachers[index]
+        teachers.remove(at:index)
+        editTeacherTable.reloadData()
+        
     }
     
+    func delete(id:String){
+        let url=URL(string:"htpps://zmbube.com/API/DeleteTeacher.php")
+        
+        var request:URLRequest=URLRequest(url:url!)
+        
+        let bodyData="UID=\(id)"
+        
+        request.httpMethod="POST"
+        request.httpBody=bodyData.data(using: String.Encoding.utf8);
+        
+        
+        let task=URLSession.shared.dataTask(with: url!){ data, response, error in
+            guard let data=data, error==nil else{
+            print("error=\(error)")
+            return
+            }
+            
+            if let httpStatus=response as? HTTPURLResponse,httpStatus.statusCode != 200{
+                print("conection error")
+                }
+            self.response=String(data:data,encoding: .utf8)!
+        }
+        
+        task.resume()
+    }
 }
+
+
+
+
+    extension  EditTeachersController: NSTableViewDataSource{
+        
+        func numberOfRows(in tableView: NSTableView) -> Int {
+            return teachers.count
+        }
+    }
+    
+    extension EditTeachersController: NSTableViewDelegate{
+        
+        func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
+            let cellIdentifier = "teacherCell"
+            
+            
+            //cell identifier is currently set to classCell, might need changeed later on to the teacherCell
+          
+                if let cell = tableView.make(withIdentifier: cellIdentifier, owner: nil) as? NSTableCellView {
+                    cell.textField?.stringValue = (teachers[row].name)
+                    return cell
+                }
+            
+            return nil
+        }}
+
+
