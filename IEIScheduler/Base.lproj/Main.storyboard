@@ -686,6 +686,8 @@
                     <tabViewItems>
                         <tabViewItem id="09i-ll-kM4"/>
                         <tabViewItem id="oiA-lt-Ol6"/>
+                        <tabViewItem id="cQp-Gw-Lao"/>
+                        <tabViewItem id="qs6-F0-Xsy"/>
                     </tabViewItems>
                     <tabView key="tabView" autoresizesSubviews="NO" misplaced="YES" type="noTabsNoBorder" id="JRI-aZ-319">
                         <rect key="frame" x="0.0" y="0.0" width="836" height="690"/>
@@ -696,6 +698,8 @@
                     <connections>
                         <segue destination="DuS-XL-YxA" kind="relationship" relationship="tabItems" id="VAi-DX-21P"/>
                         <segue destination="qeu-PA-93A" kind="relationship" relationship="tabItems" id="IhG-IF-fRt"/>
+                        <segue destination="8tQ-Ej-VwI" kind="relationship" relationship="tabItems" id="EhS-UM-kik"/>
+                        <segue destination="uJu-GP-Cdd" kind="relationship" relationship="tabItems" id="seH-px-lDn"/>
                     </connections>
                 </tabViewController>
                 <customObject id="JSf-sp-9Zy" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -775,7 +779,7 @@
                 </viewController>
                 <customObject id="sL0-xe-YtW" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="574.5" y="-565"/>
+            <point key="canvasLocation" x="27" y="1833"/>
         </scene>
         <!--Admin Tab View Controller-->
         <scene sceneID="b4o-ZC-8AN">
@@ -942,7 +946,7 @@
                 </viewController>
                 <customObject id="fBE-Oe-gna" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1831.5" y="-823.5"/>
+            <point key="canvasLocation" x="624" y="1856"/>
         </scene>
         <!--Rooms-->
         <scene sceneID="yjI-b3-CbI">
@@ -980,7 +984,7 @@
                                 </textFieldCell>
                             </textField>
                             <scrollView wantsLayer="YES" fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hcK-QK-I5j">
-                                <rect key="frame" x="6" y="47" width="170" height="233"/>
+                                <rect key="frame" x="6" y="46" width="170" height="233"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <clipView key="contentView" ambiguous="YES" id="qfX-Hf-d92">
                                     <rect key="frame" x="1" y="0.0" width="168" height="232"/>
