@@ -885,7 +885,7 @@
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView id="pxF-Zk-Pw9">
+                                                        <tableCellView identifier="teacherCell" id="pxF-Zk-Pw9">
                                                             <rect key="frame" x="1" y="1" width="107" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
@@ -936,7 +936,7 @@
                         </subviews>
                     </view>
                     <connections>
-                        <outlet property="editTeacherTable" destination="aM6-Et-zd8" id="4ac-Uw-WCd"/>
+                        <outlet property="editTeacherTable" destination="wbN-IG-H3X" id="b0I-xK-izP"/>
                     </connections>
                 </viewController>
                 <customObject id="fBE-Oe-gna" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
