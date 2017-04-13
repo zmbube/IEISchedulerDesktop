@@ -13,7 +13,8 @@ class Room: NSObject {
     var availableTimes=[String:Bool]()
     var buildingID:String
     
-    override init(){
-        buildingID=""
+    init(id:String, times:[String:Bool]){
+        buildingID=id
+        availableTimes=times
     }
 }
