@@ -11,10 +11,14 @@ import Cocoa
 class AdminTabViewController: NSTabViewController {
     
     var teachers:[Teacher]=[]
+    var classSections:[String:[Int:[Class]]]=[:]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+    }
+    override func viewWillAppear(){
+        classSections=((self.parent as? AdminController)?.classSections)!
     }
     
 }

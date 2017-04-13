@@ -40,7 +40,7 @@ extension ClassOptionsTable: NSTableViewDelegate{
         
         if let cell = classOptionsTable.make(withIdentifier: cellIdentifier, owner: nil) as? TeacherTableCell {
             cell.textField?.stringValue = teachers[row].name
-            cell.textField2.stringValue=teachers[row].id
+            cell.textField2.stringValue="# of Classes: \(teachers[row].classesAssigned)"
             return cell
         }
         

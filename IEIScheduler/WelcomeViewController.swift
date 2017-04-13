@@ -130,7 +130,7 @@ class WelcomeViewController: NSViewController {
 
             }
         }
-        let classSections=["f":fundamentalSections,"1":level1Sections,"2":level2Sections,"3":level3Sections,"4":level4Sections,"5u":level5USections,"5g":level5GSections,"6u":level6USections,"6g":level6GSections]
+        let classSections=["F":fundamentalSections,"1":level1Sections,"2":level2Sections,"3":level3Sections,"4":level4Sections,"5u":level5USections,"5g":level5GSections,"6u":level6USections,"6g":level6GSections]
         ((self.parent as? NSTabViewController)?.tabViewItems[1].viewController as? AdminController)?.classSections=classSections
          (self.parent as? NSTabViewController)?.selectedTabViewItemIndex=1
     }

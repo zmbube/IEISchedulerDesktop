@@ -16,6 +16,7 @@ class Teacher: NSObject {
     var classPreferences = NSMutableDictionary()
     var comments = ""
     var currentHappiness:Double
+    var classesAssigned=0
     
     init(name:String,id:String){
         currentHappiness=0;
