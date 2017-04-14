@@ -52,6 +52,11 @@ class SurveyResultsParser: NSObject {
             }
         }
         
+        for teacher in teachers{
+            if teacher.classPreferences.count==0{
+                teachers.remove(at: teachers.index(of: teacher)!)
+            }
+        }
         return teachers
     }
     

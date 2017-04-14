@@ -71,4 +71,13 @@ extension ClassOptionsTable: NSTableViewDelegate{
         
         return nil
     }
+    
+    func tableViewSelectionDidChange(_ notification: Notification) {
+        if(display=="section"){
+            display="teacher"
+            let className=classSections[selectedLevel]?[selectedSection]?[classOptionsTable.selectedRow].classTitle
+            teachers.sort{($0.classPreferences[className! as String] as? String)! < ($1.classPreferences[className! as String] as? String)!}
+            classOptionsTable.reloadData()
+        }
+    }
 }
