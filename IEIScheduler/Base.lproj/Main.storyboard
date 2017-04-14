@@ -849,7 +849,7 @@
         <!--Edit Teachers Controller-->
         <scene sceneID="lRB-Bt-m63">
             <objects>
-                <viewController id="uJu-GP-Cdd" customClass="EditTeachersController" sceneMemberID="viewController">
+                <viewController id="uJu-GP-Cdd" customClass="EditTeachersController" customModule="IEIScheduler" sceneMemberID="viewController">
                     <view key="view" id="wv2-bD-dv1">
                         <rect key="frame" x="0.0" y="0.0" width="471" height="419"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1490,10 +1490,16 @@
                                             <menuItem title="4" id="Ekf-rx-y84">
                                                 <modifierMask key="keyEquivalentModifierMask"/>
                                             </menuItem>
-                                            <menuItem title="5" id="o4C-y5-naU">
+                                            <menuItem title="5u" id="o4C-y5-naU">
                                                 <modifierMask key="keyEquivalentModifierMask"/>
                                             </menuItem>
-                                            <menuItem title="6" id="cmx-1p-OGJ">
+                                            <menuItem title="5g" id="9h8-Qi-x9a">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                            </menuItem>
+                                            <menuItem title="6u" id="cmx-1p-OGJ">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                            </menuItem>
+                                            <menuItem title="6g" id="Qz3-NH-YWQ">
                                                 <modifierMask key="keyEquivalentModifierMask"/>
                                             </menuItem>
                                         </items>
@@ -1512,18 +1518,19 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7iI-gl-sUk">
+                            <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="36" horizontalPageScroll="10" verticalLineScroll="36" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7iI-gl-sUk">
                                 <rect key="frame" x="0.0" y="22" width="550" height="499"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <clipView key="contentView" ambiguous="YES" id="Y3k-PT-lBW">
                                     <rect key="frame" x="1" y="0.0" width="548" height="498"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="iIy-2g-FCf" viewBased="YES" id="mAH-dy-cgo">
+                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="34" headerView="iIy-2g-FCf" viewBased="YES" id="mAH-dy-cgo">
                                             <rect key="frame" x="0.0" y="0.0" width="548" height="475"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <tableViewGridLines key="gridStyleMask" vertical="YES" horizontal="YES"/>
                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                             <tableColumns>
                                                 <tableColumn width="102" minWidth="40" maxWidth="1000" id="dd8-MW-DTF">

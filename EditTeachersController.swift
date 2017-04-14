@@ -22,10 +22,10 @@ class EditTeachersController: NSViewController {
    
     @IBAction func deleteTeacherEditButton(_ sender: AnyObject) {
         let index=editTeacherTable.selectedRow
-        let id=teachers[index]
+        let id=teachers[index].id
         teachers.remove(at:index)
         editTeacherTable.reloadData()
-        
+        delete(id: id)
     }
     
     func delete(id:String){

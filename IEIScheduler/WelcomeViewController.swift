@@ -48,7 +48,15 @@ class WelcomeViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+        self.view.wantsLayer=true
         
+    }
+    
+    override func awakeFromNib() {
+        if self.view.layer != nil {
+            let color : CGColor = CGColor(red: 1, green: 0.75, blue: 0.54, alpha: 1.0)
+            self.view.layer?.backgroundColor = color
+        }
     }
     
     @IBAction func gradOrUndergradRadioButton(_ sender: NSButton) {
@@ -126,7 +134,7 @@ class WelcomeViewController: NSViewController {
 
             }
             if(lvl5g>=i){
-                level5USections[i]=[Class(classTitle:"151G",sectNum:i),Class(classTitle:"152G",sectNum:i),Class(classTitle:"153G",sectNum:i),Class(classTitle:"154G",sectNum:i),Class(classTitle:"155G",sectNum:i),Class(classTitle:"156G",sectNum:i)]
+                level5GSections[i]=[Class(classTitle:"151G",sectNum:i),Class(classTitle:"152G",sectNum:i),Class(classTitle:"153G",sectNum:i),Class(classTitle:"154G",sectNum:i),Class(classTitle:"155G",sectNum:i),Class(classTitle:"156G",sectNum:i)]
 
             }
         }
