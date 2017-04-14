@@ -34,6 +34,11 @@ class ViewController: NSViewController {
         self.classSections=(adminTab?.classSections)!
         optionsTableView?.classSections=classSections
         classTable.reloadData()
+        optionsTableView?.containerToMaster=self
+    }
+    
+    func reloadTable(){
+        classTable.reloadData()
     }
 
     override var representedObject: Any? {
