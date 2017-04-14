@@ -103,6 +103,9 @@ class WelcomeViewController: NSViewController {
     }
     
     @IBAction func finishedSections(_ sender: NSButton) {
+        if(Int((lvl6GradPopUpButton.selectedItem?.title)!) != level6GSections.count && Int((lvl6UndergradPopUpButton.selectedItem?.title)!) != level6USections.count){
+            return
+        }
         let lvlf=Int((fundamentalPopUpButton.selectedItem?.title)!)!
         let lvl1=Int((lvl1PopUpButton.selectedItem?.title)!)!
         let lvl2=Int((lvl2PopUpButton.selectedItem?.title)!)!

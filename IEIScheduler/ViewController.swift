@@ -14,6 +14,7 @@ class ViewController: NSViewController {
     var optionsTableView:ClassOptionsTable?
     var adminTab:AdminTabViewController?
     var selectedLevel="F"
+    var classSections:[String:[Int:[Class]]]=[:]
     
     @IBOutlet weak var classTable: NSTableView!
     
@@ -28,9 +29,11 @@ class ViewController: NSViewController {
     }
     
     override func viewWillAppear() {
-        classTable.reloadData()
         self.teachers=(adminTab?.teachers)!
         optionsTableView?.teachers=teachers
+        self.classSections=(adminTab?.classSections)!
+        optionsTableView?.classSections=classSections
+        classTable.reloadData()
     }
 
     override var representedObject: Any? {
@@ -58,54 +61,30 @@ extension ViewController: NSTableViewDelegate{
         var text1=""
         var text2:String?
         
-        if tableColumn == tableView.tableColumns[0] {
-            if(((adminTab?.classSections[selectedLevel]?[1])?.endIndex)! > row){
-            text1=(adminTab?.classSections[selectedLevel]?[1]?[row].classTitle)!
-            text2=adminTab?.classSections[selectedLevel]?[1]?[row].teacher?.name ?? "NA"
-            }
-            else {return nil}
+        if(tableColumn == classTable.tableColumns[0]){
+            text1=(classSections[selectedLevel]?[row+1]?[0].classTitle)!
+            text2=classSections[selectedLevel]?[row+1]?[0].teacher?.name ?? "NA"
         }
-        else if( tableColumn==tableView.tableColumns[1]){
-            if((adminTab?.classSections[selectedLevel]?.count)!>1){
-                if(((adminTab?.classSections[selectedLevel]?[2])?.endIndex)! > row){
-            text1=(adminTab?.classSections[selectedLevel]?[2]?[row].classTitle)!
-            text2=adminTab?.classSections[selectedLevel]?[2]?[row].teacher?.name ?? "NA"
-                }
-                else {return nil}
-            }
-            else{return nil}
+        else if(tableColumn!==classTable.tableColumns[1] && (classSections[selectedLevel]?[row+1]?.endIndex)! > 1){
+            text1=(classSections[selectedLevel]?[row+1]?[1].classTitle)!
+            text2=classSections[selectedLevel]?[row+1]?[1].teacher?.name ?? "NA"
         }
-        else if( tableColumn==tableView.tableColumns[2]){
-            if((adminTab?.classSections[selectedLevel]?.count)!>2){
-                if(((adminTab?.classSections[selectedLevel]?[3])?.endIndex)! > row){
-                text1=(adminTab?.classSections[selectedLevel]?[3]?[row].classTitle)!
-                text2=adminTab?.classSections[selectedLevel]?[3]?[row].teacher?.name ?? "NA"
-                }
-                else {return nil}
-            }
-            else{return nil}
+        else if(tableColumn!==classTable.tableColumns[2] && (classSections[selectedLevel]?[row+1]?.endIndex)! > 2){
+            text1=(classSections[selectedLevel]?[row+1]?[2].classTitle)!
+            text2=classSections[selectedLevel]?[row+1]?[2].teacher?.name ?? "NA"
         }
-        else if( tableColumn==tableView.tableColumns[3]){
-            if((adminTab?.classSections[selectedLevel]?.count)!>3){
-                if(((adminTab?.classSections[selectedLevel]?[4])?.endIndex)! > row){
-                text1=(adminTab?.classSections[selectedLevel]?[4]?[row].classTitle)!
-                text2=adminTab?.classSections[selectedLevel]?[4]?[row].teacher?.name ?? "NA"
-                }
-                else {return nil}
-            }
-            else{return nil}
+        else if(tableColumn!==classTable.tableColumns[3] && (classSections[selectedLevel]?[row+1]?.endIndex)! > 3){
+            text1=(classSections[selectedLevel]?[row+1]?[3].classTitle)!
+            text2=classSections[selectedLevel]?[row]?[3].teacher?.name ?? "NA"
         }
-        else if( tableColumn==tableView.tableColumns[4]){
-            if((adminTab?.classSections[selectedLevel]?.count)!>4){
-                if(((adminTab?.classSections[selectedLevel]?[5])?.endIndex)! > row){
-                text1=(adminTab?.classSections[selectedLevel]?[5]?[row].classTitle)!
-                text2=adminTab?.classSections[selectedLevel]?[5]?[row].teacher?.name ?? "NA"
-                }
-            }
-            else{return nil}
-
+        else if(tableColumn!==classTable.tableColumns[4] && (classSections[selectedLevel]?[row+1]?.endIndex)! > 4){
+            text1=(classSections[selectedLevel]?[row+1]?[4].classTitle)!
+            text2=classSections[selectedLevel]?[row+1]?[4].teacher?.name ?? "NA"
         }
-        
+        else if(tableColumn!==classTable.tableColumns[5] && (classSections[selectedLevel]?[row+1]?.endIndex)! > 5){
+            text1=(classSections[selectedLevel]?[row+1]?[5].classTitle)!
+            text2=classSections[selectedLevel]?[row+1]?[5].teacher?.name ?? "NA"
+        }
         if let cell = tableView.make(withIdentifier: cellIdentifier, owner: nil) as? TeacherTableCell {
             cell.textField?.stringValue = text1
             cell.textField2?.stringValue = text2 ?? "NA"
@@ -115,13 +94,19 @@ extension ViewController: NSTableViewDelegate{
         return nil
     }
     
+    func tableViewSelectionDidChange(_ notification: Notification) {
+        optionsTableView?.display="section"
+        optionsTableView?.selectedLevel=selectedLevel
+        optionsTableView?.reloadForSection(section: classTable.selectedRow+1)
+    }
+    
 }
 extension ViewController: NSTableViewDataSource{
     func numberOfRows(in tableView: NSTableView) -> Int {
-        if(adminTab?.classSections.count==0){
-            return 0
+        if (!classSections.isEmpty){
+        return (classSections[selectedLevel]?.count)!
         }
-        return 6
+        return 0
     }
 }
 
