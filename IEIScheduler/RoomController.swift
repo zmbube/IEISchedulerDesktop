@@ -14,19 +14,26 @@ class RoomController: NSViewController {
     @IBOutlet weak var roomSelect: NSTableView!
     var roomIDs = ["AB 014", "AB 015", "CA 110", "ILS", "LA 011S", "LA 012S", "LA 013S", "LA 017S", "LA 018S", "LA 019S", "LA 020S", "RB 351", "RB 352", "RB 354", "RB 360"]
 //I think LA is lafollette, RB is robert bell, unsure on the others, will have to ask phil to find out
-    var selectedTimes:[String:Bool]=["8":true,"9":true,"10":true,"11":true,"12":true,"1":true,"2":true,"3":true,"4":true]
+    var selectedTimes:[String:Bool]=["8am":true,"9am":true,"10am":true,"11am":true,"12pm":true,"1pm":true,"2pm":true,"3pm":true,"4pm":true]
     var selectedDates:[String:Bool]=["M":true,"T":true,"W":true,"R":true,"F":true]
     var rooms:[Room]=[]
+    var adminTab:AdminTabViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+        adminTab=self.parent as? AdminTabViewController
         roomSelect.delegate=self
         roomSelect.dataSource=self
         for ID in roomIDs{
             rooms.append(Room(id: ID, times:selectedTimes))
         }
+       // adminTab?.rooms=rooms
     }
+    override func viewWillDisappear() {
+        adminTab?.rooms=rooms
+    }
+    
     @IBAction func timeSelect(_ sender: NSButton) {
         let time = String(sender.title)
         selectedTimes[time!] = !selectedTimes[time!]!

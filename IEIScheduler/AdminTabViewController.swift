@@ -12,6 +12,7 @@ class AdminTabViewController: NSTabViewController {
     
     var teachers:[Teacher]=[]
     var classSections:[String:[Int:[Class]]]=[:]
+    var rooms:[Room]=[]
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -15,6 +15,7 @@ class ViewController: NSViewController {
     var adminTab:AdminTabViewController?
     var selectedLevel="F"
     var classSections:[String:[Int:[Class]]]=[:]
+    var rooms:[Room]=[]
     
     @IBOutlet weak var classTable: NSTableView!
     
@@ -29,12 +30,18 @@ class ViewController: NSViewController {
     }
     
     override func viewWillAppear() {
-        self.teachers=(adminTab?.teachers)!
-        optionsTableView?.teachers=teachers
         self.classSections=(adminTab?.classSections)!
         optionsTableView?.classSections=classSections
         classTable.reloadData()
         optionsTableView?.containerToMaster=self
+            }
+    
+    override func viewDidAppear() {
+        self.rooms=(adminTab?.rooms)!
+        optionsTableView?.rooms=self.rooms
+        self.teachers=(adminTab?.teachers)!
+        optionsTableView?.teachers=teachers
+
     }
     
     func reloadTable(){

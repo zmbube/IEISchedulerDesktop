@@ -14,12 +14,16 @@ class ClassOptionsTable: NSViewController {
     var containerToMaster: ViewController?
     var teachers:[Teacher]=[]
     var classSections:[String:[Int:[Class]]]=[:]
+    var rooms:[Room]=[]
     let times=["8am","9am","10am","11am","12pm","1pm","2pm","3pm","4pm"]
     var display=""
     var selectedSection=0
     var selectedLevel=""
     var selectedClass:Class?
     var selectedTeacher:Teacher?
+    var selectedTime=""
+    var availableTimes:[String]=[]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
@@ -32,7 +36,6 @@ class ClassOptionsTable: NSViewController {
     }
     
     func reloadForSection(section:Int){
-        //teachers.sort{($0.classPreferences[className] as! String) < ($1.classPreferences[className] as! String)}
         selectedSection=section
         classOptionsTable.reloadData()
     }
@@ -48,7 +51,10 @@ extension  ClassOptionsTable: NSTableViewDataSource{
             return (classSections[selectedLevel]![selectedSection]?.count)!
         }
         else if(display=="time"){
-            return times.count
+            return availableTimes.count
+        }
+        else if(display=="room"){
+            return rooms.count
         }
         return 0
     }
@@ -67,17 +73,25 @@ extension ClassOptionsTable: NSTableViewDelegate{
             cell.textField2.stringValue="# of Classes: \(teachers[row].classesAssigned)"
             
             }
-            if display=="section"{
+            else if display=="section"{
              cell.textField?.stringValue=(classSections[selectedLevel]?[selectedSection]?[row].classTitle)!
                 cell.textField2.stringValue=(classSections[selectedLevel]?[selectedSection]?[row].teacher?.name) ?? "NA"
             }
-            if display=="time"{
+            else if display=="time"{
                 if !(selectedTeacher?.availableTimes[times[row]])! {
                     return nil
                 }
                 cell.textField?.stringValue=times[row]
                 cell.textField2.stringValue=""
             }
+            else if display=="room"{
+                if !((rooms[row].availableTimes[selectedTime])!){
+                    return nil
+                }
+                cell.textField?.stringValue=rooms[row].buildingID
+                cell.textField2.stringValue=""
+            }
+            
             return cell
         }
         
@@ -98,12 +112,21 @@ extension ClassOptionsTable: NSTableViewDelegate{
             classOptionsTable.reloadData()
         }
         else if(display=="time"){
+            selectedTime=times[classOptionsTable.selectedRow]
+            display="room"
+            
+            classOptionsTable.reloadData()
+        }
+        else if(display=="room"){
+            display=""
             selectedClass?.time=times[classOptionsTable.selectedRow]
             selectedClass?.teacher=selectedTeacher
             selectedTeacher?.availableTimes[times[classOptionsTable.selectedRow]]=false
-            display="section"
+            selectedClass?.room=rooms[classOptionsTable.selectedRow]
             classOptionsTable.reloadData()
             containerToMaster?.reloadTable()
+            
+
         }
     }
 }
