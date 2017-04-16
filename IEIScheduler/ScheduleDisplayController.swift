@@ -10,7 +10,7 @@ import Cocoa
 
 class ScheduleDisplayController: NSViewController {
 
-  
+    var classes:[String:[Int:[Class]]]=[:]
     @IBOutlet weak var text: NSTextField!
     override func viewDidLoad() {
         super.viewDidLoad()

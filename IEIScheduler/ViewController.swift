@@ -62,6 +62,9 @@ class ViewController: NSViewController {
         if segue.identifier == "toOptionsTableSegue" {
             optionsTableView = segue.destinationController as? ClassOptionsTable
         }
+        if segue.identifier=="scheduleDisplay"{
+            (segue.destinationController as? ScheduleDisplayController)?.classes=self.classSections
+        }
     }
 
 }

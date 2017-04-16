@@ -1867,7 +1867,7 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <segue destination="LE0-MN-Fdd" kind="show" id="lkJ-6L-afM"/>
+                                    <segue destination="LE0-MN-Fdd" kind="show" identifier="scheduleDisplay" id="lkJ-6L-afM"/>
                                 </connections>
                             </button>
                         </subviews>

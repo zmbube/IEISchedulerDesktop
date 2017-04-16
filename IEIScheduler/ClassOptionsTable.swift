@@ -72,19 +72,23 @@ extension ClassOptionsTable: NSTableViewDelegate{
             
             cell.textField?.stringValue = teachers[row].name
             cell.textField2.stringValue="# of Classes: \(teachers[row].classesAssigned)"
+                cell.textField?.textColor=NSColor.black
             
             }
             else if display=="section"{
              cell.textField?.stringValue=(classSections[selectedLevel]?[selectedSection]?[row].classTitle)!
                 cell.textField2.stringValue=(classSections[selectedLevel]?[selectedSection]?[row].teacher?.name) ?? "NA"
+                cell.textField?.textColor=NSColor.black
             }
             else if display=="time"{
 
                 cell.textField?.stringValue=availableTimes[row]
                 cell.textField2.stringValue=""
+                if(selectedTeacher?.timePrefs[availableTimes[row]] as? String == "1"){
+                    cell.textField?.textColor=NSColor.green                }
             }
             else if display=="room"{
-        
+                cell.textField?.textColor=NSColor.black
                 cell.textField?.stringValue=availableRooms[row].buildingID
                 cell.textField2.stringValue=""
             }
