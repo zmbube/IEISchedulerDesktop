@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4956377F1E96C6D200D77639 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4956377E1E96C6D200D77639 /* LoginViewController.swift */; };
 		495637811E96C83300D77639 /* EditTeachersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495637801E96C83300D77639 /* EditTeachersController.swift */; };
+		B64C56CE1EA39E9F0001CC62 /* ScheduleDisplayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64C56CD1EA39E9F0001CC62 /* ScheduleDisplayController.swift */; };
 		B663B0281E918E12009CC830 /* TeacherTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B663B0271E918E12009CC830 /* TeacherTableCell.swift */; };
 		B663B02A1E9192E3009CC830 /* ClassOptionsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B663B0291E9192E3009CC830 /* ClassOptionsTable.swift */; };
 		B663B0301E91AEBA009CC830 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B663B02F1E91AEBA009CC830 /* WelcomeViewController.swift */; };
@@ -49,6 +50,7 @@
 /* Begin PBXFileReference section */
 		4956377E1E96C6D200D77639 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		495637801E96C83300D77639 /* EditTeachersController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditTeachersController.swift; path = ../EditTeachersController.swift; sourceTree = "<group>"; };
+		B64C56CD1EA39E9F0001CC62 /* ScheduleDisplayController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleDisplayController.swift; sourceTree = "<group>"; };
 		B663B0271E918E12009CC830 /* TeacherTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherTableCell.swift; sourceTree = "<group>"; };
 		B663B0291E9192E3009CC830 /* ClassOptionsTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassOptionsTable.swift; sourceTree = "<group>"; };
 		B663B02F1E91AEBA009CC830 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				B6F66E741E929E1D00ABFC68 /* RoomController.swift */,
 				B6F66E761E929EB500ABFC68 /* AdminController.swift */,
 				4956377E1E96C6D200D77639 /* LoginViewController.swift */,
+				B64C56CD1EA39E9F0001CC62 /* ScheduleDisplayController.swift */,
 			);
 			path = IEIScheduler;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				B6F66E751E929E1D00ABFC68 /* RoomController.swift in Sources */,
 				B66E1FE21E4CDF970049416C /* Schedule.swift in Sources */,
 				B6F4A3671E8193CF00DB9950 /* SurveyResultsParser.swift in Sources */,
+				B64C56CE1EA39E9F0001CC62 /* ScheduleDisplayController.swift in Sources */,
 				B66E1FB91E4CDEEF0049416C /* ViewController.swift in Sources */,
 				B663B0281E918E12009CC830 /* TeacherTableCell.swift in Sources */,
 				B66E1FB71E4CDEEF0049416C /* AppDelegate.swift in Sources */,
