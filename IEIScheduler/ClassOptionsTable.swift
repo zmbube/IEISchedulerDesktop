@@ -23,6 +23,7 @@ class ClassOptionsTable: NSViewController {
     var selectedTeacher:Teacher?
     var selectedTime=""
     var availableTimes:[String]=[]
+    var availableRooms:[Room]=[]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +55,7 @@ extension  ClassOptionsTable: NSTableViewDataSource{
             return availableTimes.count
         }
         else if(display=="room"){
-            return rooms.count
+            return availableRooms.count
         }
         return 0
     }
@@ -78,17 +79,13 @@ extension ClassOptionsTable: NSTableViewDelegate{
                 cell.textField2.stringValue=(classSections[selectedLevel]?[selectedSection]?[row].teacher?.name) ?? "NA"
             }
             else if display=="time"{
-                if !(selectedTeacher?.availableTimes[times[row]])! {
-                    return nil
-                }
-                cell.textField?.stringValue=times[row]
+
+                cell.textField?.stringValue=availableTimes[row]
                 cell.textField2.stringValue=""
             }
             else if display=="room"{
-                if !((rooms[row].availableTimes[selectedTime])!){
-                    return nil
-                }
-                cell.textField?.stringValue=rooms[row].buildingID
+        
+                cell.textField?.stringValue=availableRooms[row].buildingID
                 cell.textField2.stringValue=""
             }
             
@@ -106,22 +103,37 @@ extension ClassOptionsTable: NSTableViewDelegate{
             teachers.sort{($0.classPreferences[selectedClass!.classTitle!] as? String)! < ($1.classPreferences[selectedClass!.classTitle!] as? String)!}
             classOptionsTable.reloadData()
         }
+            
         else if(display=="teacher"){
+            availableTimes=[]
             display="time"
             selectedTeacher=teachers[classOptionsTable.selectedRow]
+            for time in times{
+                if(selectedTeacher?.availableTimes[time])!{
+                    availableTimes.append(time)
+                }
+            }
             classOptionsTable.reloadData()
         }
-        else if(display=="time"){
-            selectedTime=times[classOptionsTable.selectedRow]
-            display="room"
             
+        else if(display=="time"){
+            selectedTime=availableTimes[classOptionsTable.selectedRow]
+            availableRooms=[]
+            display="room"
+            for room in rooms{
+                if(room.availableTimes[selectedTime])!{
+                    availableRooms.append(room)
+                }
+            }
             classOptionsTable.reloadData()
         }
+            
         else if(display=="room"){
             display=""
             selectedClass?.time=times[classOptionsTable.selectedRow]
             selectedClass?.teacher=selectedTeacher
             selectedTeacher?.availableTimes[times[classOptionsTable.selectedRow]]=false
+            rooms[classOptionsTable.selectedRow].availableTimes[selectedTime]=false
             selectedClass?.room=rooms[classOptionsTable.selectedRow]
             classOptionsTable.reloadData()
             containerToMaster?.reloadTable()

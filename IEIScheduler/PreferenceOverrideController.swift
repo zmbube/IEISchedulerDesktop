@@ -13,6 +13,7 @@ class PreferenceOverrideController: NSViewController {
     @IBOutlet weak var classTable: NSTableView!
     let classes = ["101", "102", "103", "104", "105", "106", "111", "112", "113", "114", "115", "116", "121", "122", "123", "124", "125", "126", "131", "132", "133", "134", "135", "136", "141", "142", "143", "144", "145", "146", "151", "152", "153", "154", "155", "156", "151G", "152G", "153G", "154G", "155G", "156G"]
     var adminTab:AdminTabViewController?
+    var teachers:[Teacher]=[]
 
 
     override func viewDidLoad() {
@@ -26,6 +27,7 @@ class PreferenceOverrideController: NSViewController {
     }
     
     override func viewWillAppear() {
+        teachers=(adminTab?.teachers)!
         teacherTable.reloadData()
         classTable.reloadData()
     }
@@ -48,7 +50,7 @@ extension  PreferenceOverrideController: NSTableViewDataSource{
             return classes.count
         }
         else if(tableView==teacherTable){
-            return (adminTab?.teachers.count)!
+            return (teachers.count)
         }
      return 0
     }
