@@ -116,6 +116,11 @@ extension ClassOptionsTable: NSTableViewDelegate{
                 if(selectedTeacher?.availableTimes[time])!{
                     availableTimes.append(time)
                 }
+                for skillClass in (classSections[selectedLevel]?[selectedSection])!{
+                    if(skillClass.time != nil && availableTimes.contains(skillClass.time!)){
+                        availableTimes.remove(at: availableTimes.index(of: skillClass.time!)!)
+                    }
+                }
             }
             classOptionsTable.reloadData()
         }
