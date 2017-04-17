@@ -21,6 +21,13 @@ class ScheduleDisplayController: NSViewController {
             options: [ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType],
             documentAttributes: nil)
         text.attributedStringValue=attrStr
+        let test="test write to file"
+        do{try test.write(toFile: "/Users/Zachary/Desktop/text.txt", atomically: false, encoding: String.Encoding.utf8)
+        }
+        catch let error {
+            print("something went wrong: \(error)")
+        }
     }
+    
     
 }
