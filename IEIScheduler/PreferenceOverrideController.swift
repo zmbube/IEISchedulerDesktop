@@ -11,8 +11,15 @@ import Cocoa
 class PreferenceOverrideController: NSViewController {
     @IBOutlet weak var teacherTable: NSTableView!
     @IBOutlet weak var classTable: NSTableView!
+    @IBOutlet weak var commentField: NSTextField!
+    @IBOutlet weak var teachButton: NSButton!
+    @IBOutlet weak var doNotTeachButton: NSButton!
+    @IBOutlet weak var availableTimesButton: NSButton!
+    
     let classes = ["101", "102", "103", "104", "105", "106", "111", "112", "113", "114", "115", "116", "121", "122", "123", "124", "125", "126", "131", "132", "133", "134", "135", "136", "141", "142", "143", "144", "145", "146", "151", "152", "153", "154", "155", "156", "151G", "152G", "153G", "154G", "155G", "156G"]
+    var selectedTimes:[String:Bool]=["8am":true,"9am":true,"10am":true,"11am":true,"12pm":true,"1pm":true,"2pm":true,"3pm":true,"4pm":true]
     var adminTab:AdminTabViewController?
+    var teachers:[Teacher]=[]
 
 
     override func viewDidLoad() {
@@ -26,9 +33,16 @@ class PreferenceOverrideController: NSViewController {
     }
     
     override func viewWillAppear() {
+        teachers=(adminTab?.teachers)!
         teacherTable.reloadData()
         classTable.reloadData()
     }
+    
+    @IBAction func timeSelect(_ sender: NSButton) {
+        let time = String(sender.title)
+        selectedTimes[time!] = !selectedTimes[time!]!
+    }
+
 
     
     @IBAction func teach(_ sender: NSButton) {
@@ -39,6 +53,9 @@ class PreferenceOverrideController: NSViewController {
     @IBAction func dontTeach(_ sender: NSButton) {
         adminTab?.teachers[teacherTable.selectedRow].classPreferences[classes[classTable.selectedRow]]="5"
     }
+    @IBAction func overrideTimes(_ sender: NSButton) {
+        teachers[teacherTable.selectedRow].availableTimes=selectedTimes
+    }
 
 }
 extension  PreferenceOverrideController: NSTableViewDataSource{
@@ -48,7 +65,7 @@ extension  PreferenceOverrideController: NSTableViewDataSource{
             return classes.count
         }
         else if(tableView==teacherTable){
-            return (adminTab?.teachers.count)!
+            return (teachers.count)
         }
      return 0
     }
@@ -73,4 +90,17 @@ extension PreferenceOverrideController: NSTableViewDelegate{
             }
         }
         return nil
-    }}
+    }
+    func tableViewSelectionDidChange(_ notification: Notification) {
+        if(teacherTable.selectedRow != -1){
+            availableTimesButton.isEnabled=true
+            if(classTable.selectedRow != -1){
+                teachButton.isEnabled=true
+                doNotTeachButton.isEnabled=true
+            }
+        }
+        if((notification.object as? NSTableView)==teacherTable){
+        commentField.stringValue=teachers[teacherTable.selectedRow].comments
+        }
+    }
+}

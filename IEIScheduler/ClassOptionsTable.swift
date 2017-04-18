@@ -14,12 +14,17 @@ class ClassOptionsTable: NSViewController {
     var containerToMaster: ViewController?
     var teachers:[Teacher]=[]
     var classSections:[String:[Int:[Class]]]=[:]
+    var rooms:[Room]=[]
     let times=["8am","9am","10am","11am","12pm","1pm","2pm","3pm","4pm"]
     var display=""
     var selectedSection=0
     var selectedLevel=""
     var selectedClass:Class?
     var selectedTeacher:Teacher?
+    var selectedTime=""
+    var availableTimes:[String]=[]
+    var availableRooms:[Room]=[]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
@@ -32,7 +37,6 @@ class ClassOptionsTable: NSViewController {
     }
     
     func reloadForSection(section:Int){
-        //teachers.sort{($0.classPreferences[className] as! String) < ($1.classPreferences[className] as! String)}
         selectedSection=section
         classOptionsTable.reloadData()
     }
@@ -48,7 +52,10 @@ extension  ClassOptionsTable: NSTableViewDataSource{
             return (classSections[selectedLevel]![selectedSection]?.count)!
         }
         else if(display=="time"){
-            return times.count
+            return availableTimes.count
+        }
+        else if(display=="room"){
+            return availableRooms.count
         }
         return 0
     }
@@ -65,19 +72,27 @@ extension ClassOptionsTable: NSTableViewDelegate{
             
             cell.textField?.stringValue = teachers[row].name
             cell.textField2.stringValue="# of Classes: \(teachers[row].classesAssigned)"
+                cell.textField?.textColor=NSColor.black
             
             }
-            if display=="section"{
+            else if display=="section"{
              cell.textField?.stringValue=(classSections[selectedLevel]?[selectedSection]?[row].classTitle)!
                 cell.textField2.stringValue=(classSections[selectedLevel]?[selectedSection]?[row].teacher?.name) ?? "NA"
+                cell.textField?.textColor=NSColor.black
             }
-            if display=="time"{
-                if !(selectedTeacher?.availableTimes[times[row]])! {
-                    return nil
-                }
-                cell.textField?.stringValue=times[row]
+            else if display=="time"{
+
+                cell.textField?.stringValue=availableTimes[row]
+                cell.textField2.stringValue=""
+                if(selectedTeacher?.timePrefs[availableTimes[row]] as? String == "1"){
+                    cell.textField?.textColor=NSColor.green                }
+            }
+            else if display=="room"{
+                cell.textField?.textColor=NSColor.black
+                cell.textField?.stringValue=availableRooms[row].buildingID
                 cell.textField2.stringValue=""
             }
+            
             return cell
         }
         
@@ -89,21 +104,55 @@ extension ClassOptionsTable: NSTableViewDelegate{
         if(display=="section"){
             display="teacher"
             selectedClass=classSections[selectedLevel]?[selectedSection]?[classOptionsTable.selectedRow]
-            teachers.sort{($0.classPreferences[selectedClass!.classTitle!] as? String)! < ($1.classPreferences[selectedClass!.classTitle!] as? String)!}
+            if(selectedClass?.teacher != nil){
+                selectedClass?.teacher?.availableTimes[(selectedClass?.time)!]=true
+                selectedClass?.room?.availableTimes[(selectedClass?.time)!]=true
+                selectedClass?.time=nil
+            }
+            teachers.sort{($0.classPreferences[selectedClass!.classTitle] as? String)! < ($1.classPreferences[selectedClass!.classTitle] as? String)!}
             classOptionsTable.reloadData()
         }
+            
         else if(display=="teacher"){
+            availableTimes=[]
             display="time"
             selectedTeacher=teachers[classOptionsTable.selectedRow]
+            for time in times{
+                if(selectedTeacher?.availableTimes[time])!{
+                    availableTimes.append(time)
+                }
+                for skillClass in (classSections[selectedLevel]?[selectedSection])!{
+                    if(skillClass.time != nil && availableTimes.contains(skillClass.time!)){
+                        availableTimes.remove(at: availableTimes.index(of: skillClass.time!)!)
+                    }
+                }
+            }
             classOptionsTable.reloadData()
         }
+            
         else if(display=="time"){
-            selectedClass?.time=times[classOptionsTable.selectedRow]
+            selectedTime=availableTimes[classOptionsTable.selectedRow]
+            availableRooms=[]
+            display="room"
+            for room in rooms{
+                if(room.availableTimes[selectedTime])!{
+                    availableRooms.append(room)
+                }
+            }
+            classOptionsTable.reloadData()
+        }
+            
+        else if(display=="room"){
+            display=""
+            selectedClass?.time=selectedTime
             selectedClass?.teacher=selectedTeacher
-            selectedTeacher?.availableTimes[times[classOptionsTable.selectedRow]]=false
-            display="section"
+            selectedTeacher?.availableTimes[selectedTime]=false
+            rooms[classOptionsTable.selectedRow].availableTimes[selectedTime]=false
+            selectedClass?.room=rooms[classOptionsTable.selectedRow]
             classOptionsTable.reloadData()
             containerToMaster?.reloadTable()
+            
+
         }
     }
 }
