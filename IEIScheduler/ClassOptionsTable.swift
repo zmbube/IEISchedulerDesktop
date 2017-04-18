@@ -104,7 +104,7 @@ extension ClassOptionsTable: NSTableViewDelegate{
         if(display=="section"){
             display="teacher"
             selectedClass=classSections[selectedLevel]?[selectedSection]?[classOptionsTable.selectedRow]
-            teachers.sort{($0.classPreferences[selectedClass!.classTitle!] as? String)! < ($1.classPreferences[selectedClass!.classTitle!] as? String)!}
+            teachers.sort{($0.classPreferences[selectedClass!.classTitle] as? String)! < ($1.classPreferences[selectedClass!.classTitle] as? String)!}
             classOptionsTable.reloadData()
         }
             

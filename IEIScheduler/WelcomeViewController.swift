@@ -64,7 +64,7 @@ class WelcomeViewController: NSViewController {
         
         if(sender.title=="UnderGraduate"){
             sect=(lvl6UndergradPopUpButton.selectedItem?.title)!
-            standing=""
+            standing="U"
             
         }else{
             sect=(lvl6GradPopUpButton.selectedItem?.title)!
@@ -88,8 +88,8 @@ class WelcomeViewController: NSViewController {
                 for i in 1 ... 6{
                     let boolean = selectedSkills[i]
                     if(boolean)!{
-                        let title="16\(i)\(standing)"
-                        classes.append(Class(classTitle: title,sectNum: section))
+                        let title="16\(i)"
+                        classes.append(Class(classTitle: title,sectNum: section, standing:standing))
                     }
                 }
                 if(standing=="G"){
@@ -115,29 +115,29 @@ class WelcomeViewController: NSViewController {
         let lvl5g=Int((lvl5GradPopUpButton.selectedItem?.title)!)!
         for i in 1 ... 5{
             if(lvlf>=i){
-                fundamentalSections[i]=[Class(classTitle:"101",sectNum:i),Class(classTitle:"102",sectNum:i),Class(classTitle:"103",sectNum:i),Class(classTitle:"104",sectNum:i),Class(classTitle:"105",sectNum:i),Class(classTitle:"106",sectNum:i)]
+                fundamentalSections[i]=[Class(classTitle:"101",sectNum:i,standing:"U"),Class(classTitle:"102",sectNum:i,standing:"U"),Class(classTitle:"103",sectNum:i,standing:"U"),Class(classTitle:"104",sectNum:i,standing:"U"),Class(classTitle:"105",sectNum:i,standing:"U"),Class(classTitle:"106",sectNum:i,standing:"U")]
             }
             if(lvl1>=i){
-                level1Sections[i]=[Class(classTitle:"111",sectNum:i),Class(classTitle:"112",sectNum:i),Class(classTitle:"113",sectNum:i),Class(classTitle:"114",sectNum:i),Class(classTitle:"115",sectNum:i),Class(classTitle:"116",sectNum:i)]
+                level1Sections[i]=[Class(classTitle:"111",sectNum:i,standing:"U"),Class(classTitle:"112",sectNum:i,standing:"U"),Class(classTitle:"113",sectNum:i,standing:"U"),Class(classTitle:"114",sectNum:i,standing:"U"),Class(classTitle:"115",sectNum:i,standing:"U"),Class(classTitle:"116",sectNum:i,standing:"U")]
             }
             if(lvl2>=i){
-                level2Sections[i]=[Class(classTitle:"121",sectNum:i),Class(classTitle:"122",sectNum:i),Class(classTitle:"123",sectNum:i),Class(classTitle:"124",sectNum:i),Class(classTitle:"125",sectNum:i),Class(classTitle:"126",sectNum:i)]
+                level2Sections[i]=[Class(classTitle:"121",sectNum:i,standing:"U"),Class(classTitle:"122",sectNum:i,standing:"U"),Class(classTitle:"123",sectNum:i,standing:"U"),Class(classTitle:"124",sectNum:i,standing:"U"),Class(classTitle:"125",sectNum:i,standing:"U"),Class(classTitle:"126",sectNum:i,standing:"U")]
 
             }
             if(lvl3>=i){
-                level3Sections[i]=[Class(classTitle:"131",sectNum:i),Class(classTitle:"132",sectNum:i),Class(classTitle:"133",sectNum:i),Class(classTitle:"134",sectNum:i),Class(classTitle:"135",sectNum:i),Class(classTitle:"136",sectNum:i)]
+                level3Sections[i]=[Class(classTitle:"131",sectNum:i,standing:"U"),Class(classTitle:"132",sectNum:i,standing:"U"),Class(classTitle:"133",sectNum:i,standing:"U"),Class(classTitle:"134",sectNum:i,standing:"U"),Class(classTitle:"135",sectNum:i,standing:"U"),Class(classTitle:"136",sectNum:i,standing:"U")]
 
             }
             if(lvl4>=i){
-                level4Sections[i]=[Class(classTitle:"141",sectNum:i),Class(classTitle:"142",sectNum:i),Class(classTitle:"143",sectNum:i),Class(classTitle:"144",sectNum:i),Class(classTitle:"145",sectNum:i),Class(classTitle:"146",sectNum:i)]
+                level4Sections[i]=[Class(classTitle:"141",sectNum:i,standing:"U"),Class(classTitle:"142",sectNum:i,standing:"U"),Class(classTitle:"143",sectNum:i,standing:"U"),Class(classTitle:"144",sectNum:i,standing:"U"),Class(classTitle:"145",sectNum:i,standing:"U"),Class(classTitle:"146",sectNum:i,standing:"U")]
 
             }
             if(lvl5u>=i){
-                level5USections[i]=[Class(classTitle:"151",sectNum:i),Class(classTitle:"152",sectNum:i),Class(classTitle:"153",sectNum:i),Class(classTitle:"154",sectNum:i),Class(classTitle:"155",sectNum:i),Class(classTitle:"156",sectNum:i)]
+                level5USections[i]=[Class(classTitle:"151",sectNum:i,standing:"U"),Class(classTitle:"152",sectNum:i,standing:"U"),Class(classTitle:"153",sectNum:i,standing:"U"),Class(classTitle:"154",sectNum:i,standing:"U"),Class(classTitle:"155",sectNum:i,standing:"U"),Class(classTitle:"156",sectNum:i,standing:"U")]
 
             }
             if(lvl5g>=i){
-                level5GSections[i]=[Class(classTitle:"151G",sectNum:i),Class(classTitle:"152G",sectNum:i),Class(classTitle:"153G",sectNum:i),Class(classTitle:"154G",sectNum:i),Class(classTitle:"155G",sectNum:i),Class(classTitle:"156G",sectNum:i)]
+                level5GSections[i]=[Class(classTitle:"151",sectNum:i,standing:"G"),Class(classTitle:"152",sectNum:i,standing:"G"),Class(classTitle:"153",sectNum:i,standing:"G"),Class(classTitle:"154",sectNum:i,standing:"G"),Class(classTitle:"155",sectNum:i,standing:"G"),Class(classTitle:"156",sectNum:i,standing:"G")]
 
             }
         }
