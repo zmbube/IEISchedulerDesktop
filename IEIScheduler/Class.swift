@@ -31,7 +31,7 @@ class Class: NSObject {
         }else if time != nil {
             result+="MTWR"
         }
-        result+="</td><td>\(classTitle) \(standing) - "
+        result+="</td><td>\(classTitle) - "
         if(classTitle.hasSuffix("1")){
             result+="Writing"
         }

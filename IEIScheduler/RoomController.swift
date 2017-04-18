@@ -28,7 +28,7 @@ class RoomController: NSViewController {
         for ID in roomIDs{
             rooms.append(Room(id: ID, times:selectedTimes))
         }
-       // adminTab?.rooms=rooms
+        roomSelect.reloadData()
     }
     override func viewWillDisappear() {
         adminTab?.rooms=rooms
@@ -45,6 +45,7 @@ class RoomController: NSViewController {
     @IBAction func addRoom(_ sender: NSButton) {
         let room = Room(id:"\(buildingEnter.stringValue) \(roomNumberEnter.stringValue)", times:selectedTimes)
         rooms.append(room)
+        roomSelect.reloadData()
     }
     @IBAction func removeRoom(_ sender: NSButton) {
         rooms.remove(at: roomSelect.selectedRow)

@@ -59,22 +59,35 @@ class ScheduleDisplayController: NSViewController {
     }
     
     @IBAction func saveSchedule(_ sender: NSButton) {
-        let attrStr=text.attributedString()
-        do{
-            let htmlData = try attrStr.data(from: NSMakeRange(0, attrStr.length), documentAttributes: [NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType])
-            
-            if let htmlString = NSString(data: htmlData, encoding: String.Encoding.utf8.rawValue) {
-                let output=(htmlString as String)+"<style> body {width:8.5in;height:11in}</style>\n"
-                do{try output.write(toFile: "/Users/Zachary/Desktop/text.html", atomically: false, encoding: String.Encoding.utf8)
-                }
-                catch let error {
-                    print("something went wrong: \(error)")
+        let savePanel=NSSavePanel();
+        savePanel.allowedFileTypes=["html"]
+        savePanel.allowsOtherFileTypes=false
+        savePanel.showsTagField=false
+        savePanel.isExtensionHidden=false
+        var location:URL
+        let i=savePanel.runModal()
+        if i==NSFileHandlingPanelOKButton{
+            location=savePanel.url!
+            let attrStr=text.attributedString()
+            do{
+                let htmlData = try attrStr.data(from: NSMakeRange(0, attrStr.length), documentAttributes: [NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType])
+                
+                if let htmlString = NSString(data: htmlData, encoding: String.Encoding.utf8.rawValue) {
+                    let output=(htmlString as String)+"<style> body {width:8.5in;height:11in}</style>\n"
+                    do{try output.write(to: location, atomically: false, encoding: String.Encoding.utf8)
+                    }
+                    catch let error {
+                        print("something went wrong: \(error)")
+                    }
                 }
             }
+            catch {
+                return
+            }
+
         }
-        catch {
-            return
-        }
+        
+        
         
         
     }

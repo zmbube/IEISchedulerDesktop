@@ -88,7 +88,7 @@ class WelcomeViewController: NSViewController {
                 for i in 1 ... 6{
                     let boolean = selectedSkills[i]
                     if(boolean)!{
-                        let title="16\(i)"
+                        let title="16\(i)\(standing)"
                         classes.append(Class(classTitle: title,sectNum: section, standing:standing))
                     }
                 }
@@ -137,7 +137,7 @@ class WelcomeViewController: NSViewController {
 
             }
             if(lvl5g>=i){
-                level5GSections[i]=[Class(classTitle:"151",sectNum:i,standing:"G"),Class(classTitle:"152",sectNum:i,standing:"G"),Class(classTitle:"153",sectNum:i,standing:"G"),Class(classTitle:"154",sectNum:i,standing:"G"),Class(classTitle:"155",sectNum:i,standing:"G"),Class(classTitle:"156",sectNum:i,standing:"G")]
+                level5GSections[i]=[Class(classTitle:"151G",sectNum:i,standing:"G"),Class(classTitle:"152G",sectNum:i,standing:"G"),Class(classTitle:"153G",sectNum:i,standing:"G"),Class(classTitle:"154G",sectNum:i,standing:"G"),Class(classTitle:"155G",sectNum:i,standing:"G"),Class(classTitle:"156G",sectNum:i,standing:"G")]
 
             }
         }

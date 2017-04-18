@@ -104,6 +104,11 @@ extension ClassOptionsTable: NSTableViewDelegate{
         if(display=="section"){
             display="teacher"
             selectedClass=classSections[selectedLevel]?[selectedSection]?[classOptionsTable.selectedRow]
+            if(selectedClass?.teacher != nil){
+                selectedClass?.teacher?.availableTimes[(selectedClass?.time)!]=true
+                selectedClass?.room?.availableTimes[(selectedClass?.time)!]=true
+                selectedClass?.time=nil
+            }
             teachers.sort{($0.classPreferences[selectedClass!.classTitle] as? String)! < ($1.classPreferences[selectedClass!.classTitle] as? String)!}
             classOptionsTable.reloadData()
         }
@@ -139,9 +144,9 @@ extension ClassOptionsTable: NSTableViewDelegate{
             
         else if(display=="room"){
             display=""
-            selectedClass?.time=times[classOptionsTable.selectedRow]
+            selectedClass?.time=selectedTime
             selectedClass?.teacher=selectedTeacher
-            selectedTeacher?.availableTimes[times[classOptionsTable.selectedRow]]=false
+            selectedTeacher?.availableTimes[selectedTime]=false
             rooms[classOptionsTable.selectedRow].availableTimes[selectedTime]=false
             selectedClass?.room=rooms[classOptionsTable.selectedRow]
             classOptionsTable.reloadData()
