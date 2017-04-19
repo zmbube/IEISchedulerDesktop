@@ -157,6 +157,7 @@ extension ClassOptionsTable: NSTableViewDelegate{
             selectedClass?.time=selectedTime
             selectedClass?.teacher=selectedTeacher
             selectedTeacher?.availableTimes[selectedTime]=false
+            selectedTeacher?.classesAssigned += 1
             rooms[classOptionsTable.selectedRow].availableTimes[selectedTime]=false
             selectedClass?.room=rooms[classOptionsTable.selectedRow]
             classOptionsTable.reloadData()
