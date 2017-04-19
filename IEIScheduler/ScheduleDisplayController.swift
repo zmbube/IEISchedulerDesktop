@@ -16,31 +16,27 @@ class ScheduleDisplayController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+       
+        self.view.wantsLayer=true
+        
+    }
+    
+    override func awakeFromNib() {
+        if self.view.layer != nil {
+            let color : CGColor = CGColor(red: 1, green: 0.75, blue: 0.54, alpha: 1.0)
+            self.view.layer?.backgroundColor = color
+        }
+    }
+
+    
+    override func viewWillAppear() {
         let str=formatSchedule()
         let attrStr = try! NSAttributedString(
             data: str.data(using: String.Encoding.unicode, allowLossyConversion: true)!,
             options: [ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType],
             documentAttributes: nil)
         text.textStorage?.setAttributedString(attrStr)
-//        let test="test write to file"
-//        do{try test.write(toFile: "/Users/Zachary/Desktop/text.txt", atomically: false, encoding: String.Encoding.utf8)
-//        }
-//        catch let error {
-//            print("something went wrong: \(error)")
-//        }
-//        do{
-//        let htmlData = try attrStr.data(from: NSMakeRange(0, attrStr.length), documentAttributes: [NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType])
-//        
-//            if let htmlString = NSString(data: htmlData, encoding: String.Encoding.utf8.rawValue) {
-//                print(htmlString)
-//                
-//            }
-//        }
-//        catch {
-//            return
-//        }
-        
-        }
+    }
     
     func formatSchedule()->String{
         var result="<h1 align=\"center\">S# 20##</h1>\n"

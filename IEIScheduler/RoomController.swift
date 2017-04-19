@@ -29,7 +29,19 @@ class RoomController: NSViewController {
             rooms.append(Room(id: ID, times:selectedTimes))
         }
         roomSelect.reloadData()
+        self.view.wantsLayer=true
+        
     }
+    
+    override func awakeFromNib() {
+        if self.view.layer != nil {
+            let color : CGColor = CGColor(red: 1, green: 0.75, blue: 0.54, alpha: 1.0)
+            self.view.layer?.backgroundColor = color
+        }
+    }
+
+    
+    
     override func viewWillDisappear() {
         adminTab?.rooms=rooms
     }

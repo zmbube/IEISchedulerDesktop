@@ -20,7 +20,17 @@ class AdminController: NSViewController {
         // Do view setup here.
         teachers=parser.getTeachers()
         adminTabs?.teachers=self.teachers
+        self.view.wantsLayer=true
+        
     }
+    
+    override func awakeFromNib() {
+        if self.view.layer != nil {
+            let color : CGColor = CGColor(red: 1, green: 0.75, blue: 0.54, alpha: 1.0)
+            self.view.layer?.backgroundColor = color
+        }
+    }
+
     
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
         let tabs=segue.destinationController as? AdminTabViewController
