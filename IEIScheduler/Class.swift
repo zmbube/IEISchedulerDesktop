@@ -32,22 +32,22 @@ class Class: NSObject {
             result+="MTWR"
         }
         result+="</td><td>\(classTitle) - "
-        if(classTitle.hasSuffix("1")){
+        if(classTitle.hasSuffix("1") || classTitle.hasSuffix("1G")){
             result+="Writing"
         }
-        else if(classTitle.hasSuffix("2")){
+        else if(classTitle.hasSuffix("2") || classTitle.hasSuffix("2G")){
             result+="Grammar"
         }
-        else if classTitle.hasSuffix("3"){
+        else if classTitle.hasSuffix("3") || classTitle.hasSuffix("3G"){
             result+="Reading"
         }
-        else if classTitle.hasSuffix("4"){
+        else if classTitle.hasSuffix("4") || classTitle.hasSuffix("4G"){
             result+="Oral Communication"
         }
-        else if classTitle.hasSuffix("5"){
+        else if classTitle.hasSuffix("5") || classTitle.hasSuffix("5G"){
             result+="Extensive Reading & Keyboarding"
         }
-        else if classTitle.hasSuffix("6"){
+        else if classTitle.hasSuffix("6") || classTitle.hasSuffix("6G"){
             result+="Vocabulary & Literacy"
         }
         result+="</td><td>Instructor: "

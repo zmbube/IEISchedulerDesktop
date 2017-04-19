@@ -20,6 +20,7 @@ class WelcomeViewController: NSViewController {
     @IBOutlet weak var lvl5GradPopUpButton: NSPopUpButton!
     @IBOutlet weak var lvl6UndergradPopUpButton: NSPopUpButton!
     @IBOutlet weak var lvl6GradPopUpButton: NSPopUpButton!
+    @IBOutlet weak var doneButton: NSButton!
     //Section Radio Button Outlets
     @IBOutlet weak var sect1RadioButton: NSButton!
     @IBOutlet weak var sect2RadioButton: NSButton!
@@ -70,6 +71,7 @@ class WelcomeViewController: NSViewController {
             sect=(lvl6GradPopUpButton.selectedItem?.title)!
             standing="G"
         }
+        deselectSection()
         setEnabledSectButtons(sect: sect)
     }
     @IBAction func sectionRadioButton(_ sender: NSButton) {
@@ -79,7 +81,7 @@ class WelcomeViewController: NSViewController {
         let skill = Int(sender.title)
         selectedSkills[skill!] = !selectedSkills[skill!]!
     }
-
+    
     
     @IBAction func setSections(_ sender: NSButton) {
         if(underGradRadioButton.state==NSOnState || gradRadioButton.state==NSOnState){
@@ -88,7 +90,12 @@ class WelcomeViewController: NSViewController {
                 for i in 1 ... 6{
                     let boolean = selectedSkills[i]
                     if(boolean)!{
-                        let title="16\(i)\(standing)"
+                        var title=""
+                        if(standing=="G"){
+                            title="16\(i)\(standing)"
+                        }else{
+                            title="16\(i)"
+                        }
                         classes.append(Class(classTitle: title,sectNum: section, standing:standing))
                     }
                 }
@@ -99,13 +106,18 @@ class WelcomeViewController: NSViewController {
                 }
             }
         }
+        enableDoneButton()
         //TODO: Show count of currently set sections
     }
     
     @IBAction func finishedSections(_ sender: NSButton) {
+        
         if(Int((lvl6GradPopUpButton.selectedItem?.title)!) != level6GSections.count || Int((lvl6UndergradPopUpButton.selectedItem?.title)!) != level6USections.count){
-            return
+                enableDoneButton()
+            
+            
         }
+        
         let lvlf=Int((fundamentalPopUpButton.selectedItem?.title)!)!
         let lvl1=Int((lvl1PopUpButton.selectedItem?.title)!)!
         let lvl2=Int((lvl2PopUpButton.selectedItem?.title)!)!
@@ -122,39 +134,49 @@ class WelcomeViewController: NSViewController {
             }
             if(lvl2>=i){
                 level2Sections[i]=[Class(classTitle:"121",sectNum:i,standing:"U"),Class(classTitle:"122",sectNum:i,standing:"U"),Class(classTitle:"123",sectNum:i,standing:"U"),Class(classTitle:"124",sectNum:i,standing:"U"),Class(classTitle:"125",sectNum:i,standing:"U"),Class(classTitle:"126",sectNum:i,standing:"U")]
-
+                
             }
             if(lvl3>=i){
                 level3Sections[i]=[Class(classTitle:"131",sectNum:i,standing:"U"),Class(classTitle:"132",sectNum:i,standing:"U"),Class(classTitle:"133",sectNum:i,standing:"U"),Class(classTitle:"134",sectNum:i,standing:"U"),Class(classTitle:"135",sectNum:i,standing:"U"),Class(classTitle:"136",sectNum:i,standing:"U")]
-
+                
             }
             if(lvl4>=i){
                 level4Sections[i]=[Class(classTitle:"141",sectNum:i,standing:"U"),Class(classTitle:"142",sectNum:i,standing:"U"),Class(classTitle:"143",sectNum:i,standing:"U"),Class(classTitle:"144",sectNum:i,standing:"U"),Class(classTitle:"145",sectNum:i,standing:"U"),Class(classTitle:"146",sectNum:i,standing:"U")]
-
+                
             }
             if(lvl5u>=i){
                 level5USections[i]=[Class(classTitle:"151",sectNum:i,standing:"U"),Class(classTitle:"152",sectNum:i,standing:"U"),Class(classTitle:"153",sectNum:i,standing:"U"),Class(classTitle:"154",sectNum:i,standing:"U"),Class(classTitle:"155",sectNum:i,standing:"U"),Class(classTitle:"156",sectNum:i,standing:"U")]
-
+                
             }
             if(lvl5g>=i){
                 level5GSections[i]=[Class(classTitle:"151G",sectNum:i,standing:"G"),Class(classTitle:"152G",sectNum:i,standing:"G"),Class(classTitle:"153G",sectNum:i,standing:"G"),Class(classTitle:"154G",sectNum:i,standing:"G"),Class(classTitle:"155G",sectNum:i,standing:"G"),Class(classTitle:"156G",sectNum:i,standing:"G")]
-
+                
             }
         }
         let classSections=["F":fundamentalSections,"1":level1Sections,"2":level2Sections,"3":level3Sections,"4":level4Sections,"5u":level5USections,"5g":level5GSections,"6u":level6USections,"6g":level6GSections]
         ((self.parent as? NSTabViewController)?.tabViewItems[1].viewController as? AdminController)?.classSections=classSections
-         (self.parent as? NSTabViewController)?.selectedTabViewItemIndex=1
+        (self.parent as? NSTabViewController)?.selectedTabViewItemIndex=1
     }
     
     
     @IBAction func selectedChanged(_ sender: NSPopUpButton) {
-        sect1RadioButton.state=0
-        sect2RadioButton.state=0
-        sect3RadioButton.state=0
-        sect4RadioButton.state=0
-        sect5RadioButton.state=0
+        deselectSection()
         underGradRadioButton.state=0
         gradRadioButton.state=0
+        
+        var count = Int((lvl6GradPopUpButton.selectedItem?.title)!)
+        for i in count!+1 ... 5  {
+            if(level6GSections.keys.contains(i)){
+                level6GSections.removeValue(forKey: i)
+            }
+        }
+        count = Int((lvl6UndergradPopUpButton.selectedItem?.title)!)
+        for i in count!+1 ... 5  {
+            if(level6USections.keys.contains(i)){
+                level6USections.removeValue(forKey: i)
+            }
+        }
+        enableDoneButton()
     }
     
     func setEnabledSectButtons(sect: String){
@@ -162,7 +184,7 @@ class WelcomeViewController: NSViewController {
         sect3RadioButton.isEnabled=true
         sect4RadioButton.isEnabled=true
         sect5RadioButton.isEnabled=true
-
+        
         if(sect<="1"){
             sect2RadioButton.isEnabled=false
         }
@@ -183,5 +205,22 @@ class WelcomeViewController: NSViewController {
             return true
         }
         return false
+    }
+    
+    func enableDoneButton(){
+        if(Int((lvl6GradPopUpButton.selectedItem?.title)!)! <= level6GSections.count && Int((lvl6UndergradPopUpButton.selectedItem?.title)!)! <= level6USections.count){
+            doneButton.isEnabled=true
+        }else{
+            doneButton.isEnabled=false
+        }
+    }
+    
+    func deselectSection(){
+        sect1RadioButton.state=0
+        sect2RadioButton.state=0
+        sect3RadioButton.state=0
+        sect4RadioButton.state=0
+        sect5RadioButton.state=0
+
     }
 }
