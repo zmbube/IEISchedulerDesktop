@@ -1697,7 +1697,7 @@
                                                                     <rect key="frame" x="-2" y="17" width="94" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="8a8-Cr-KEC">
-                                                                        <font key="font" metaFont="system"/>
+                                                                        <font key="font" size="13" name="Helvetica"/>
                                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
@@ -1706,7 +1706,7 @@
                                                                     <rect key="frame" x="-2" y="0.0" width="94" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="rhS-iW-J3L">
-                                                                        <font key="font" metaFont="system"/>
+                                                                        <font key="font" size="13" name="Helvetica"/>
                                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
