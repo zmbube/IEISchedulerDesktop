@@ -157,7 +157,7 @@ extension ViewController: NSTableViewDelegate{
             return NSColor.green
         }
         else if((teacher.classPreferences[className] as? String) == "2"){
-            return NSColor.yellow
+            return NSColor(calibratedRed: 1.0, green: 0.84, blue: 0.0, alpha: 1.0)
         }
         else if((teacher.classPreferences[className] as? String) == "3"){
             return NSColor.black
