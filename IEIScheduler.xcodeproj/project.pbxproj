@@ -28,6 +28,7 @@
 		B6F66E731E929D7000ABFC68 /* PreferenceOverrideController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F66E721E929D7000ABFC68 /* PreferenceOverrideController.swift */; };
 		B6F66E751E929E1D00ABFC68 /* RoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F66E741E929E1D00ABFC68 /* RoomController.swift */; };
 		B6F66E771E929EB500ABFC68 /* AdminController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F66E761E929EB500ABFC68 /* AdminController.swift */; };
+		B79A97D11EB24222007B99DA /* link.txt in Resources */ = {isa = PBXBuildFile; fileRef = B79A97D01EB24222007B99DA /* link.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		B6F66E721E929D7000ABFC68 /* PreferenceOverrideController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceOverrideController.swift; sourceTree = "<group>"; };
 		B6F66E741E929E1D00ABFC68 /* RoomController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomController.swift; sourceTree = "<group>"; };
 		B6F66E761E929EB500ABFC68 /* AdminController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminController.swift; sourceTree = "<group>"; };
+		B79A97D01EB24222007B99DA /* link.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = link.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 				B6F66E761E929EB500ABFC68 /* AdminController.swift */,
 				4956377E1E96C6D200D77639 /* LoginViewController.swift */,
 				B64C56CD1EA39E9F0001CC62 /* ScheduleDisplayController.swift */,
+				B79A97D01EB24222007B99DA /* link.txt */,
 			);
 			path = IEIScheduler;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B66E1FBB1E4CDEEF0049416C /* Assets.xcassets in Resources */,
+				B79A97D11EB24222007B99DA /* link.txt in Resources */,
 				B66E1FBE1E4CDEEF0049416C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

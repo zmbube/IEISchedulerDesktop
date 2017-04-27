@@ -18,10 +18,14 @@ class AdminController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
-        teachers=parser.getTeachers()
-        adminTabs?.teachers=self.teachers
+        
         self.view.wantsLayer=true
         
+    }
+    
+    override func viewWillAppear() {
+        teachers=parser.getTeachers()
+        adminTabs?.teachers=self.teachers
     }
     
     override func awakeFromNib() {
