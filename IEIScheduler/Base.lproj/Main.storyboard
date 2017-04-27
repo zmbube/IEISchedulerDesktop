@@ -1,9 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16A323" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1421" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12120"/>
-        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11201"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -687,7 +686,6 @@
                         <tabViewItem id="09i-ll-kM4"/>
                         <tabViewItem id="oiA-lt-Ol6"/>
                         <tabViewItem id="cQp-Gw-Lao"/>
-                        <tabViewItem id="qs6-F0-Xsy"/>
                     </tabViewItems>
                     <tabView key="tabView" autoresizesSubviews="NO" misplaced="YES" type="noTabsNoBorder" id="JRI-aZ-319">
                         <rect key="frame" x="0.0" y="0.0" width="836" height="690"/>
@@ -699,7 +697,6 @@
                         <segue destination="DuS-XL-YxA" kind="relationship" relationship="tabItems" id="VAi-DX-21P"/>
                         <segue destination="qeu-PA-93A" kind="relationship" relationship="tabItems" id="IhG-IF-fRt"/>
                         <segue destination="8tQ-Ej-VwI" kind="relationship" relationship="tabItems" id="EhS-UM-kik"/>
-                        <segue destination="uJu-GP-Cdd" kind="relationship" relationship="tabItems" id="seH-px-lDn"/>
                     </connections>
                 </tabViewController>
                 <customObject id="JSf-sp-9Zy" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -890,11 +887,11 @@
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView identifier="teacherCell" id="pxF-Zk-Pw9">
+                                                        <tableCellView identifier="cell" id="pxF-Zk-Pw9">
                                                             <rect key="frame" x="1" y="1" width="107" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Kk-5x-hc4">
+                                                                <textField identifier="cell" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Kk-5x-hc4">
                                                                     <rect key="frame" x="0.0" y="0.0" width="107" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="Sut-d7-0zR">
@@ -942,11 +939,12 @@
                     </view>
                     <connections>
                         <outlet property="editTeacherTable" destination="wbN-IG-H3X" id="b0I-xK-izP"/>
+                        <outlet property="label" destination="1EP-rD-wZx" id="OWe-Pj-XMN"/>
                     </connections>
                 </viewController>
                 <customObject id="fBE-Oe-gna" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="624" y="1856"/>
+            <point key="canvasLocation" x="-614" y="1938"/>
         </scene>
         <!--Rooms-->
         <scene sceneID="yjI-b3-CbI">
@@ -1693,7 +1691,7 @@
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                 </textField>
-                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Mg-rx-Zfa">
+                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Mg-rx-Zfa">
                                                                     <rect key="frame" x="-2" y="17" width="94" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="8a8-Cr-KEC">
@@ -1702,7 +1700,7 @@
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                 </textField>
-                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AXh-su-5KJ">
+                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AXh-su-5KJ">
                                                                     <rect key="frame" x="-2" y="0.0" width="94" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="rhS-iW-J3L">
@@ -2572,6 +2570,17 @@
                                 </buttonCell>
                                 <connections>
                                     <action selector="gradOrUndergradRadioButton:" target="DuS-XL-YxA" id="TLz-z1-Clc"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uso-QO-L3Q">
+                                <rect key="frame" x="604" y="95" width="139" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Delete Teachers" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jUJ-Uu-ca2">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <segue destination="uJu-GP-Cdd" kind="show" id="Y7h-9X-AhQ"/>
                                 </connections>
                             </button>
                         </subviews>

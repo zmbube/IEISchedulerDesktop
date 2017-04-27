@@ -10,23 +10,37 @@ import Cocoa
 
 class SurveyResultsParser: NSObject {
     
-    let teacherInfoUrl="https://www.zmbube.com/API/selectTeacher.php"
-    let classPrefUrl="https://www.zmbube.com/API/selectclassPref.php"
-    let timePrefUrl="https://www.zmbube.com/API/selectTimePref.php"
-    let commentsUrl="https://www.zmbube.com/API/selectComment.php"
-    let adminInfoUrl="https://www.zmbube.com/API/selectAdminInfo.php"
-    let adminOverrideUrl="https://www.zmbube.com/API/selectAdminOverride.php"
+    var baseURL=""
+    let teacherInfoUrl="/API/selectTeacher.php"
+    let classPrefUrl="/API/selectclassPref.php"
+    let timePrefUrl="/API/selectTimePref.php"
+    let commentsUrl="/API/selectComment.php"
+
+    
+    override init(){
+        super.init()
+        do{
+            let path = Bundle.main.path(forResource: "link", ofType: "txt")
+            baseURL=try String(contentsOfFile: path!)
+            baseURL=baseURL.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+       
+        } catch{
+            
+        }
+        
+    }
     
     func getTeachers()->[Teacher]{
         var teachers=[Teacher]()
-        let teachersInfo=parseUrl(urlInput: teacherInfoUrl)
+        
+        let teachersInfo=parseUrl(urlInput: baseURL+teacherInfoUrl)
         for teacher in teachersInfo {
             let temp = Teacher(name: "\(teacher["F_Name"] as! String) \(teacher["L_Name"] as! String)" ,id:teacher["U_ID"] as! String)
             teachers.append(temp)
         }
-        let classPrefs=parseUrl(urlInput: classPrefUrl)
-        let timePrefs=parseUrl(urlInput: timePrefUrl)
-        let comments=parseUrl(urlInput: commentsUrl)
+        let classPrefs=parseUrl(urlInput: baseURL+classPrefUrl)
+        let timePrefs=parseUrl(urlInput: baseURL+timePrefUrl)
+        let comments=parseUrl(urlInput: baseURL+commentsUrl)
         
         for prefs in classPrefs {
             for teacher in teachers {
@@ -67,7 +81,7 @@ class SurveyResultsParser: NSObject {
     
     func getTeacherList()->[Teacher]{
         var teachers=[Teacher]()
-        let teachersInfo=parseUrl(urlInput: teacherInfoUrl)
+        let teachersInfo=parseUrl(urlInput: baseURL+teacherInfoUrl)
         for teacher in teachersInfo {
             let temp = Teacher(name: "\(teacher["F_Name"] as! String) \(teacher["L_Name"] as! String)" ,id:teacher["U_ID"] as! String)
             teachers.append(temp)
