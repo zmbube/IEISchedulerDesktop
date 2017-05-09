@@ -84,7 +84,7 @@ extension ClassOptionsTable: NSTableViewDelegate{
             cell.textField2.stringValue="# of Classes: \(teachers[row].classesAssigned)"
                 cell.textField?.textColor=NSColor.black
                 
-                    cell.textField?.textColor = textColor(teacher: teachers[row] , className: selectedClass?.classTitle)
+                    cell.textField?.textColor = textColor(teacher: teachers[row] , className: (selectedClass?.classTitle)!)
                 
             
             }
