@@ -83,6 +83,9 @@ extension ClassOptionsTable: NSTableViewDelegate{
             cell.textField?.stringValue = teachers[row].name
             cell.textField2.stringValue="# of Classes: \(teachers[row].classesAssigned)"
                 cell.textField?.textColor=NSColor.black
+                
+                    cell.textField?.textColor = textColor(teacher: teachers[row] , className: selectedClass?.classTitle)
+                
             
             }
             else if display=="section"{
@@ -166,4 +169,23 @@ extension ClassOptionsTable: NSTableViewDelegate{
 
         }
     }
+    
+    func textColor(teacher:Teacher, className:String)->NSColor{
+        if((teacher.classPreferences[className] as? String) == "1"){
+            return NSColor.green
+        }
+        else if((teacher.classPreferences[className] as? String) == "2"){
+            return NSColor(calibratedRed: 1.0, green: 0.84, blue: 0.0, alpha: 1.0)
+        }
+        else if((teacher.classPreferences[className] as? String) == "3"){
+            return NSColor.black
+        }
+        else if((teacher.classPreferences[className] as? String) == "4"){
+            return NSColor.red
+        }
+        
+        
+        return NSColor.black
+    }
+
 }

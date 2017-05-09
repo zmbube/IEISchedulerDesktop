@@ -180,11 +180,14 @@ class WelcomeViewController: NSViewController {
     }
     
     func setEnabledSectButtons(sect: String){
+        sect1RadioButton.isEnabled=true
         sect2RadioButton.isEnabled=true
         sect3RadioButton.isEnabled=true
         sect4RadioButton.isEnabled=true
         sect5RadioButton.isEnabled=true
-        
+        if(sect<="0"){
+            sect1RadioButton.isEnabled=false;
+        }
         if(sect<="1"){
             sect2RadioButton.isEnabled=false
         }

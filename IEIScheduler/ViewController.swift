@@ -79,7 +79,7 @@ extension ViewController: NSTableViewDelegate{
         var text4=""
         var text2Color=NSColor.black
         
-        if(tableColumn == classTable.tableColumns[0]){
+        if(tableColumn == classTable.tableColumns[0] && (classSections[selectedLevel]?[row+1]?.endIndex)! > 0){
             text1=(classSections[selectedLevel]?[row+1]?[0].classTitle)!
             text2=classSections[selectedLevel]?[row+1]?[0].teacher?.name ?? "NA"
             text3=classSections[selectedLevel]?[row+1]?[0].time ?? "NA"
