@@ -12,7 +12,7 @@ class ScheduleDisplayController: NSViewController {
 
     var classes:[String:[Int:[Class]]]=[:]
     let levels=["F","1","2","3","4","5u","5g","6u","6g"]
-    @IBOutlet weak var text: NSTextView!
+    @IBOutlet var text: NSTextView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
@@ -40,15 +40,17 @@ class ScheduleDisplayController: NSViewController {
     
     func formatSchedule()->String{
         var result="<h1 align=\"center\">S# 20##</h1>\n"
-        
+        print("writing schedule")
         for level in levels{
             let count=classes[level]?.count
+            if(count != 0){
             for i in 1 ... count!{
                 result+="<h1 align=\"center\"><<\(i)>></h1>\n<h3>IEI<<\(i)>></h3>\n<h3>CRN<<#>></h3>\n\n<table>"
                 for item in (classes[level]?[i])!{
                     result+="<tr>\(item.toHTMLString())</tr>"
                 }
                 result+="</table>"
+            }
             }
         }
         return result
